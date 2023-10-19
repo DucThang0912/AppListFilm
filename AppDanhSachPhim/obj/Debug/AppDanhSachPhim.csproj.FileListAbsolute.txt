@@ -1,0 +1,13 @@
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\bin\Debug\AppDanhSachPhim.exe.config
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\bin\Debug\AppDanhSachPhim.exe
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\bin\Debug\AppDanhSachPhim.pdb
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.AssemblyReference.cache
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.Properties.Resources.resources
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.GenerateResource.cache
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.CoreCompileInputs.cache
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.exe
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.pdb
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormMain.resources
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimHot.resources
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormHome.resources
+D:\Code\Winform C#\AppDanhSachPhim\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormLogin.resources
