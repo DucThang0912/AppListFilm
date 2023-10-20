@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\DAL\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -116,7 +119,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{3c37b4cd-f6e9-4807-88b1-69be35afeac8}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{19f5ef59-2cff-4683-91e4-50b448fb7e6f}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

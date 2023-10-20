@@ -1,0 +1,15 @@
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\BUS.dll.config
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\BUS.dll
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\BUS.pdb
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\DAL.dll
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.dll
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\DAL.pdb
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\DAL.dll.config
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.xml
+D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.dll
+D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.pdb
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.SqlServer.xml

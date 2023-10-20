@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,53 @@ namespace AppDanhSachPhim
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FormMain formMain = new FormMain();
-            formMain.Show();
+            string username = txtUserName.Text;
+            string password = txtPassword.Text;
+            if (UserService.AuthenticateUser(username, password))
+            {
+                FormMain formMain = new FormMain();
+                formMain.Show();
+                this.Hide();
+                formMain.logOut += FormMain_logOut;
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc password không đúng!");
+            }
+        }
+
+        private void FormMain_logOut(object sender, EventArgs e)
+        {
+            (sender as FormMain).isExit = false;
+            (sender as FormMain).Close();
+            this.Show();
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            FormRegister formRegister = new FormRegister();
+            formRegister.Show();
             this.Hide();
+            formRegister.Back += FormRegister_Back;
+            
+        }
+
+        private void FormRegister_Back(object sender, EventArgs e)
+        {
+            (sender as FormRegister).Close();
+            this.Show();
+        }-
+
+        private void checkBoxHidePass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHidePass.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }

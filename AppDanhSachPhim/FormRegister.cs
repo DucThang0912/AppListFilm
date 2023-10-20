@@ -16,10 +16,10 @@ namespace AppDanhSachPhim
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        public event EventHandler Back;
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            Back(this, new EventArgs());
         }
     }
 }
