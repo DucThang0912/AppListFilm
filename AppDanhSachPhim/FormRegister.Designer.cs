@@ -35,23 +35,27 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtAgainPass = new System.Windows.Forms.TextBox();
             this.checkboxHidePass = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtAgainPass = new System.Windows.Forms.TextBox();
+            this.txtOTP = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRegisterConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRegister
             // 
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegister.Location = new System.Drawing.Point(218, 354);
+            this.btnRegister.Location = new System.Drawing.Point(218, 383);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(90, 35);
-            this.btnRegister.TabIndex = 6;
+            this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Đăng ký";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // label3
             // 
@@ -68,22 +72,23 @@
             // btnBack
             // 
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBack.Location = new System.Drawing.Point(361, 354);
+            this.btnBack.Location = new System.Drawing.Point(361, 383);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(90, 35);
-            this.btnBack.TabIndex = 7;
+            this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Trở về";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(218, 213);
+            this.txtPassword.Location = new System.Drawing.Point(218, 210);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(233, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUser
             // 
@@ -117,18 +122,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Tài khoản";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(54, 264);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Nhập lại mật khẩu";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -143,11 +136,36 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(218, 155);
+            this.txtEmail.Location = new System.Drawing.Point(218, 152);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(233, 20);
             this.txtEmail.TabIndex = 2;
+            // 
+            // checkboxHidePass
+            // 
+            this.checkboxHidePass.AutoSize = true;
+            this.checkboxHidePass.ForeColor = System.Drawing.SystemColors.Control;
+            this.checkboxHidePass.Location = new System.Drawing.Point(218, 301);
+            this.checkboxHidePass.Margin = new System.Windows.Forms.Padding(2);
+            this.checkboxHidePass.Name = "checkboxHidePass";
+            this.checkboxHidePass.Size = new System.Drawing.Size(95, 17);
+            this.checkboxHidePass.TabIndex = 5;
+            this.checkboxHidePass.Text = "Hiện mật khẩu";
+            this.checkboxHidePass.UseVisualStyleBackColor = true;
+            this.checkboxHidePass.CheckedChanged += new System.EventHandler(this.checkboxHidePass_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(54, 264);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Nhập lại mật khẩu";
             // 
             // txtAgainPass
             // 
@@ -156,25 +174,49 @@
             this.txtAgainPass.Name = "txtAgainPass";
             this.txtAgainPass.Size = new System.Drawing.Size(233, 20);
             this.txtAgainPass.TabIndex = 4;
+            this.txtAgainPass.UseSystemPasswordChar = true;
             // 
-            // checkboxHidePass
+            // txtOTP
             // 
-            this.checkboxHidePass.AutoSize = true;
-            this.checkboxHidePass.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkboxHidePass.Location = new System.Drawing.Point(218, 315);
-            this.checkboxHidePass.Margin = new System.Windows.Forms.Padding(2);
-            this.checkboxHidePass.Name = "checkboxHidePass";
-            this.checkboxHidePass.Size = new System.Drawing.Size(95, 17);
-            this.checkboxHidePass.TabIndex = 5;
-            this.checkboxHidePass.Text = "Hiện mật khẩu";
-            this.checkboxHidePass.UseVisualStyleBackColor = true;
+            this.txtOTP.Location = new System.Drawing.Point(218, 340);
+            this.txtOTP.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOTP.Name = "txtOTP";
+            this.txtOTP.Size = new System.Drawing.Size(233, 20);
+            this.txtOTP.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(54, 340);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Mã OTP";
+            // 
+            // btnRegisterConfirm
+            // 
+            this.btnRegisterConfirm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegisterConfirm.Location = new System.Drawing.Point(218, 383);
+            this.btnRegisterConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegisterConfirm.Name = "btnRegisterConfirm";
+            this.btnRegisterConfirm.Size = new System.Drawing.Size(90, 35);
+            this.btnRegisterConfirm.TabIndex = 21;
+            this.btnRegisterConfirm.Text = "Đăng ký";
+            this.btnRegisterConfirm.UseVisualStyleBackColor = true;
+            this.btnRegisterConfirm.Click += new System.EventHandler(this.btnRegisterConfirm_Click);
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(528, 400);
+            this.ClientSize = new System.Drawing.Size(555, 466);
+            this.Controls.Add(this.btnRegisterConfirm);
+            this.Controls.Add(this.txtOTP);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.checkboxHidePass);
             this.Controls.Add(this.txtAgainPass);
             this.Controls.Add(this.txtEmail);
@@ -192,6 +234,8 @@
             this.Name = "FormRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRegister_FormClosed);
+            this.Load += new System.EventHandler(this.FormRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,10 +250,13 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtAgainPass;
         private System.Windows.Forms.CheckBox checkboxHidePass;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtAgainPass;
+        private System.Windows.Forms.TextBox txtOTP;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRegisterConfirm;
     }
 }

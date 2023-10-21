@@ -17,7 +17,12 @@ namespace AppDanhSachPhim
         {
             InitializeComponent();
         }
-
+        void clearInput()
+        {
+            txtUserName.Clear();
+            txtPassword.Clear();
+            checkBoxHidePass.Checked = false;
+        }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string username = txtUserName.Text;
@@ -37,9 +42,10 @@ namespace AppDanhSachPhim
 
         private void FormMain_logOut(object sender, EventArgs e)
         {
-            (sender as FormMain).isExit = false;
+            Const.isExit = false;
             (sender as FormMain).Close();
             this.Show();
+            clearInput();
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -48,14 +54,15 @@ namespace AppDanhSachPhim
             formRegister.Show();
             this.Hide();
             formRegister.Back += FormRegister_Back;
-            
+            clearInput();
         }
 
         private void FormRegister_Back(object sender, EventArgs e)
         {
+            Const.isExit = false;
             (sender as FormRegister).Close();
             this.Show();
-        }-
+        }
 
         private void checkBoxHidePass_CheckedChanged(object sender, EventArgs e)
         {

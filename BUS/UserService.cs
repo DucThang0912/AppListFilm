@@ -16,5 +16,40 @@ namespace BUS
                 return context.Users.Any(p => p.UserName == name && p.Password == password);
             }
         }
+        public static bool addUsers(User user) 
+        {
+            var context = new ModelAppMovies();
+            using (var transaction = context.Database.BeginTransaction())
+            {
+                try
+                {
+                    context.Users.Add(user);
+                    context.SaveChanges();
+                    transaction.Commit();
+                    return true;
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    return false;
+                }
+            }
+        }
+        public static bool userExist(string userName)
+        {
+            using (var context = new ModelAppMovies())
+            {
+                var exists = context.Users.Any(p => p.UserName == userName);
+                return exists;
+            }
+        }
+        public static bool emailExist(string email)
+        {
+            using (var context = new ModelAppMovies())
+            {
+                var exists = context.Users.Any(p => p.Email == email);
+                return exists;
+            }
+        }
     }
 }

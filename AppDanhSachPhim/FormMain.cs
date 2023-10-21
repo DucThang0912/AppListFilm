@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,6 @@ namespace AppDanhSachPhim
     public partial class FormMain : Form
     {
         private Form activeForm = null;
-        public bool isExit = true;
         public FormMain()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace AppDanhSachPhim
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (isExit)
+            if (Const.isExit)
             {
                 Application.Exit();
             }
