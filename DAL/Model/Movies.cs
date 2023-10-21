@@ -11,8 +11,8 @@ namespace DAL.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Movies()
         {
-            Images = new HashSet<Image>();
-            Genres = new HashSet<Genre>();
+            Images = new HashSet<Images>();
+            Genres = new HashSet<Genres>();
         }
 
         [Key]
@@ -44,9 +44,9 @@ namespace DAL.Model
         public int View { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Image> Images { get; set; }
+        public virtual ICollection<Images> Images { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<Genres> Genres { get; set; }
     }
 }

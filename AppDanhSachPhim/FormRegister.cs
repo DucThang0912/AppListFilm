@@ -135,7 +135,7 @@ namespace AppDanhSachPhim
                     string password = txtPassword.Text;
                     string email = txtEmail.Text;
 
-                    User user = new User()
+                    Users user = new Users()
                     {
                         UserName = username,
                         Password = password,

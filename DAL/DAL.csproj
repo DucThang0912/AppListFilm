@@ -50,11 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Genre.cs" />
-    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\Genres.cs" />
+    <Compile Include="Model\Images.cs" />
     <Compile Include="Model\ModelAppMovies.cs" />
     <Compile Include="Model\Movies.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -25,6 +25,9 @@ namespace AppDanhSachPhim
         }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            txtUserName.Text = "admin";
+            txtPassword.Text = "admin"; 
+
             string username = txtUserName.Text;
             string password = txtPassword.Text;
             if (UserService.AuthenticateUser(username, password))

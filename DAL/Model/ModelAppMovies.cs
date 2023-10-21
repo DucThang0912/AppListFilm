@@ -8,25 +8,25 @@ namespace DAL.Model
     public partial class ModelAppMovies : DbContext
     {
         public ModelAppMovies()
-            : base("name=Model1")
+            : base("name=Model11")
         {
         }
 
-        public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<Genres> Genres { get; set; }
+        public virtual DbSet<Images> Images { get; set; }
         public virtual DbSet<Movies> Movies { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Genre>()
+            modelBuilder.Entity<Genres>()
                 .HasMany(e => e.Movies)
                 .WithMany(e => e.Genres)
                 .Map(m => m.ToTable("MovieGenres").MapLeftKey("GenreID").MapRightKey("MovieID"));
 
             modelBuilder.Entity<Movies>()
                 .HasMany(e => e.Images)
-                .WithRequired(e => e.Movy)
+                .WithRequired(e => e.Movies)
                 .WillCascadeOnDelete(false);
         }
     }

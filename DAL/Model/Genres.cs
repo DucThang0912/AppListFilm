@@ -6,14 +6,15 @@ namespace DAL.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Genre
+    public partial class Genres
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Genre()
+        public Genres()
         {
             Movies = new HashSet<Movies>();
         }
 
+        [Key]
         public int GenreID { get; set; }
 
         [Required]

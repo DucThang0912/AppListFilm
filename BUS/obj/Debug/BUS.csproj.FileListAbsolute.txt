@@ -13,3 +13,18 @@ D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.dll
 D:\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.pdb
 D:\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.SqlServer.dll
 D:\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\BUS.dll.config
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\BUS.dll
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\BUS.pdb
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\DAL.dll
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\EntityFramework.dll
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\DAL.pdb
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\DAL.dll.config
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\EntityFramework.xml
+D:\Code\Winform C#\AppDanhSachPhim\BUS\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\Winform C#\AppDanhSachPhim\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Code\Winform C#\AppDanhSachPhim\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Code\Winform C#\AppDanhSachPhim\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Code\Winform C#\AppDanhSachPhim\BUS\obj\Debug\BUS.dll
+D:\Code\Winform C#\AppDanhSachPhim\BUS\obj\Debug\BUS.pdb
