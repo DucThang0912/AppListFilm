@@ -44,7 +44,16 @@ namespace BUS
                     try
                     {
                         var existingMovie = model.Movies.FirstOrDefault(p => p.MovieID == id);
-                        if (existingMovie != null)
+                        var existingImage = model.Images.FirstOrDefault(p => p.MovieID == id);
+                        if (existingMovie != null && existingImage != null)
+                        {
+                            model.Movies.Remove(existingMovie);
+                            model.Images.Remove(existingImage);
+                            model.SaveChanges();
+                            transaction.Commit();
+                            return true;
+                        }
+                        else if(existingMovie != null && existingImage == null)
                         {
                             model.Movies.Remove(existingMovie);
                             model.SaveChanges();

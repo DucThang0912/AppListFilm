@@ -524,7 +524,6 @@
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
-            this.Column11.Visible = false;
             // 
             // FormHome
             // 

@@ -5,7 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +24,8 @@ namespace AppDanhSachPhim
             InitializeComponent();
         }
 
+        string imagePath = null;
+
         private void FormHome_Load(object sender, EventArgs e)
         {
             checkedListBoxGenres.DataSource = GenresService.GetAllGenres();
@@ -32,30 +37,37 @@ namespace AppDanhSachPhim
 
         private void LoadData()
         {
-            dataGridViewMain.Rows.Clear();
-            foreach (var item in MoviesService.GetAllMovies())
+            try
             {
-                int index = dataGridViewMain.Rows.Add();
-                dataGridViewMain.Rows[index].Cells[0].Value = item.MovieID;
-                dataGridViewMain.Rows[index].Cells[1].Value = item.MovieName;
-                dataGridViewMain.Rows[index].Cells[2].Value = item.Duration;
-                dataGridViewMain.Rows[index].Cells[3].Value = item.ReleaseDate;
-                dataGridViewMain.Rows[index].Cells[4].Value = item.EndDate;
-                dataGridViewMain.Rows[index].Cells[5].Value = item.Production;
-                dataGridViewMain.Rows[index].Cells[6].Value = item.Director;
-                dataGridViewMain.Rows[index].Cells[7].Value = item.Year;
-                if (item.MovieType == true)
+                dataGridViewMain.Rows.Clear();
+                foreach (var item in MoviesService.GetAllMovies())
                 {
-                    dataGridViewMain.Rows[index].Cells[8].Value = radioButtonPhimLe.Text;
-                }
-                else
-                {
-                    dataGridViewMain.Rows[index].Cells[8].Value = radioButtonPhimBo.Text;
-                }
-                dataGridViewMain.Rows[index].Cells[9].Value = item.Description;
+                    int index = dataGridViewMain.Rows.Add();
+                    dataGridViewMain.Rows[index].Cells[0].Value = item.MovieID;
+                    dataGridViewMain.Rows[index].Cells[1].Value = item.MovieName;
+                    dataGridViewMain.Rows[index].Cells[2].Value = item.Duration;
+                    dataGridViewMain.Rows[index].Cells[3].Value = item.ReleaseDate;
+                    dataGridViewMain.Rows[index].Cells[4].Value = item.EndDate;
+                    dataGridViewMain.Rows[index].Cells[5].Value = item.Production;
+                    dataGridViewMain.Rows[index].Cells[6].Value = item.Director;
+                    dataGridViewMain.Rows[index].Cells[7].Value = item.Year;
+                    if (item.MovieType == true)
+                    {
+                        dataGridViewMain.Rows[index].Cells[8].Value = radioButtonPhimLe.Text;
+                    }
+                    else
+                    {
+                        dataGridViewMain.Rows[index].Cells[8].Value = radioButtonPhimBo.Text;
+                    }
+                    dataGridViewMain.Rows[index].Cells[9].Value = item.Description;
 
-                //int imageID = item.MovieID ; 
-                //dataGridViewMain.Rows[index].Cells[10].Value = ImagesService.GetImageData(imageID);
+                    int id = item.MovieID;
+                    dataGridViewMain.Rows[index].Cells[10].Value = ImagesService.GetImageData(id).ToString();
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
 
@@ -75,6 +87,46 @@ namespace AppDanhSachPhim
             int year = releaseDate.Year;
             if (int.Parse(textBoxYear.Text.Trim()) < year) { return true; }
             else { return false; }
+        }
+
+        private bool AddImages()
+        {
+            try
+            {
+                int movieID = int.Parse(textBoxMovieID.Text);
+                if (ImagesService.KTMovieID(movieID)) // nếu có sẽ sửa lại đường dẫn ảnh
+                {
+                    if (ImagesService.UpdateImages(movieID, imagePath))
+                    {
+                        LoadData();
+                        return true;
+                    }
+                }
+                else // chưa có sẽ thêm mới đường dẫn ảnh       // sài cho sửa phim thì đc nhưng thêm thì lỗi saveCharge
+                {
+                    Images image = new Images()
+                    {
+                        ImageID = movieID,
+                        MovieID = movieID,
+                        ImageData = imagePath
+                    };
+
+                    if (ImagesService.addImage(image))
+                    {
+                        LoadData();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }  
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return false;
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -108,12 +160,18 @@ namespace AppDanhSachPhim
                 int year = int.Parse(textBoxYear.Text);
                 bool movieType = KTMovieType();
 
-                if (MoviesService.KTMovieID(int.Parse(textBoxMovieID.Text)) == true) //sửa lại phim
+                if (MoviesService.KTMovieID(movieID)) //sửa lại phim
                 {
                     if (MoviesService.UpdateMovie(movieID, movieName, description, duration, releaseDate, endDate, production, director, year, movieType))
                     {
-                        LoadData();
-                        MessageBox.Show("Cập nhật thành công!");
+                        if (AddImages())
+                        {
+                            MessageBox.Show("Cập nhật thành công!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi ảnh!");
+                        }
                     }
                     else
                     {
@@ -137,15 +195,31 @@ namespace AppDanhSachPhim
                         MovieType = movieType,
                         View = 0
                     };
+
                     if (MoviesService.addMovie(movie))
                     {
-                        LoadData();
-                        MessageBox.Show("Thêm thành công!");
+                        if (imagePath == null)
+                        {
+                            LoadData();
+                            MessageBox.Show("Thêm thành công!");
+                        }
+                        else
+                        {
+                            if(AddImages())
+                            {
+                                MessageBox.Show("Thêm thành công!");
+                            }
+                            else
+                            {
+                                LoadData();
+                                MessageBox.Show("Lỗi ảnh!");
+                            }
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Lỗi!");
-                    }
+                        MessageBox.Show("Thêm thất bại!");
+                    } 
                 }
             }
             catch (Exception)
@@ -158,29 +232,37 @@ namespace AppDanhSachPhim
         {
             try
             {
-                if (int.TryParse(textBoxMovieID.Text.Trim(), out int id)) 
-                {     
-                    if (MoviesService.KTMovieID(id))
+                DialogResult result = MessageBox.Show("Bạn có muốn xoá?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    if (int.TryParse(textBoxMovieID.Text.Trim(), out int id))
                     {
-                        if (MoviesService.deleteMovie(id))
+                        if (MoviesService.KTMovieID(id))
                         {
-                            LoadData();
-                            MessageBox.Show("Xoá thành công!");
+                            if (MoviesService.deleteMovie(id))
+                            {
+                                LoadData();
+                                MessageBox.Show("Xoá thành công!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xoá thất bại!");
+                            }
+
                         }
                         else
                         {
-                            MessageBox.Show("Xoá thất bại!");
+                            MessageBox.Show("Không tìm thấy phim với MovieID: " + id);
                         }
-                        
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy phim với MovieID: " + id);
+                        MessageBox.Show("MovieID không hợp lệ. Vui lòng nhập một số nguyên.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("MovieID không hợp lệ. Vui lòng nhập một số nguyên.");
+                    return;
                 }
             }
             catch (Exception)
@@ -196,7 +278,7 @@ namespace AppDanhSachPhim
                 openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string imagePath = openFileDialog.FileName;
+                    imagePath = openFileDialog.FileName;
                     pictureBoxIMG.Image = System.Drawing.Image.FromFile(imagePath);
                 }
             }
@@ -221,16 +303,30 @@ namespace AppDanhSachPhim
                     radioButtonPhimBo.Checked = selectedRow.Cells[8].Value.ToString() == radioButtonPhimBo.Text;
                     textBoxDescription.Text = selectedRow.Cells[9].Value.ToString();
 
-                    //string imagePath = selectedRow.Cells[10].Value.ToString();
+                    imagePath = selectedRow.Cells[10].Value.ToString();
 
-                    //if (!string.IsNullOrEmpty(imagePath))
-                    //{
-                    //    pictureBoxIMG.Image = System.Drawing.Image.FromFile(imagePath);
-                    //}
-                    //else
-                    //{
-                    //    pictureBoxIMG.Image = null;
-                    //}
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        if (Uri.IsWellFormedUriString(imagePath, UriKind.Absolute)) // Kiểm tra xem đường dẫn là URL
+                        {
+                            using (WebClient webClient = new WebClient())
+                            {
+                                byte[] data = webClient.DownloadData(imagePath);
+                                using (MemoryStream ms = new MemoryStream(data))
+                                {
+                                    pictureBoxIMG.Image = System.Drawing.Image.FromStream(ms);
+                                }
+                            }
+                        }
+                        else // Đây là đường dẫn file cục bộ
+                        {
+                            pictureBoxIMG.Image = System.Drawing.Image.FromFile(imagePath);
+                        }
+                    }
+                    else
+                    {
+                        pictureBoxIMG.Image = null;
+                    }
                 }
             }
             catch (Exception)
