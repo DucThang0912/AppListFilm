@@ -36,3 +36,4 @@ D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.exe
 D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.pdb
 D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.SqlServer.dll
 D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormAccoutManager.resources

@@ -55,7 +55,11 @@ namespace AppDanhSachPhim
             NewForm(new FormPhimHot());
             activeForm = null;
         }
-
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormAccoutManager());
+            activeForm = null;
+        }
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (Const.isExit)
@@ -69,5 +73,7 @@ namespace AppDanhSachPhim
         {
             logOut(this, new EventArgs());
         }
+
+      
     }
 }

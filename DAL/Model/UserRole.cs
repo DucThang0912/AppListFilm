@@ -6,21 +6,23 @@ namespace DAL.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Genre
+    public partial class UserRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Genre()
+        public UserRole()
         {
-            Movies = new HashSet<Movy>();
+            Users = new HashSet<User>();
         }
 
-        public int GenreID { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int RoleID { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string GenreName { get; set; }
+        public string RoleName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movy> Movies { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

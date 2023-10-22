@@ -53,8 +53,9 @@
     <Compile Include="Model\Genre.cs" />
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\ModelAppMovies.cs" />
-    <Compile Include="Model\Movies.cs" />
+    <Compile Include="Model\Movy.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

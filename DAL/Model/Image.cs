@@ -15,6 +15,6 @@ namespace DAL.Model
         [StringLength(100)]
         public string ImageData { get; set; }
 
-        public virtual Movies Movy { get; set; }
+        public virtual Movy Movy { get; set; }
     }
 }

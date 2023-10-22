@@ -99,7 +99,7 @@
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(783, 473);
             this.panelMain.TabIndex = 29;
@@ -120,7 +120,7 @@
             this.Column5,
             this.Column6});
             this.dataGridViewMain.Location = new System.Drawing.Point(0, 247);
-            this.dataGridViewMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewMain.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewMain.Name = "dataGridViewMain";
             this.dataGridViewMain.ReadOnly = true;
             this.dataGridViewMain.RowHeadersWidth = 51;
@@ -176,9 +176,9 @@
             this.groupBox1.Controls.Add(this.radioButtonPhimBo);
             this.groupBox1.Controls.Add(this.radioButtonPhimLe);
             this.groupBox1.Location = new System.Drawing.Point(335, 152);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(223, 75);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
@@ -188,7 +188,7 @@
             // 
             this.radioButtonPhimBo.AutoSize = true;
             this.radioButtonPhimBo.Location = new System.Drawing.Point(130, 38);
-            this.radioButtonPhimBo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonPhimBo.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonPhimBo.Name = "radioButtonPhimBo";
             this.radioButtonPhimBo.Size = new System.Drawing.Size(63, 17);
             this.radioButtonPhimBo.TabIndex = 1;
@@ -200,7 +200,7 @@
             // 
             this.radioButtonPhimLe.AutoSize = true;
             this.radioButtonPhimLe.Location = new System.Drawing.Point(23, 38);
-            this.radioButtonPhimLe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonPhimLe.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonPhimLe.Name = "radioButtonPhimLe";
             this.radioButtonPhimLe.Size = new System.Drawing.Size(59, 17);
             this.radioButtonPhimLe.TabIndex = 0;
@@ -213,7 +213,7 @@
             this.checkedListBoxTheLoai.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkedListBoxTheLoai.FormattingEnabled = true;
             this.checkedListBoxTheLoai.Location = new System.Drawing.Point(43, 101);
-            this.checkedListBoxTheLoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBoxTheLoai.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBoxTheLoai.Name = "checkedListBoxTheLoai";
             this.checkedListBoxTheLoai.Size = new System.Drawing.Size(222, 79);
             this.checkedListBoxTheLoai.TabIndex = 51;
@@ -222,7 +222,7 @@
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonDelete.Location = new System.Drawing.Point(173, 204);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(90, 41);
             this.buttonDelete.TabIndex = 50;
@@ -233,7 +233,7 @@
             // 
             this.buttonUpdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonUpdate.Location = new System.Drawing.Point(43, 204);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(90, 41);
             this.buttonUpdate.TabIndex = 49;
@@ -245,7 +245,7 @@
             this.dateTimePickerNgayKT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePickerNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNgayKT.Location = new System.Drawing.Point(407, 52);
-            this.dateTimePickerNgayKT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerNgayKT.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerNgayKT.Name = "dateTimePickerNgayKT";
             this.dateTimePickerNgayKT.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerNgayKT.TabIndex = 48;
@@ -255,7 +255,7 @@
             this.dateTimePickerNgayKC.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePickerNgayKC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNgayKC.Location = new System.Drawing.Point(407, 28);
-            this.dateTimePickerNgayKC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerNgayKC.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerNgayKC.Name = "dateTimePickerNgayKC";
             this.dateTimePickerNgayKC.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerNgayKC.TabIndex = 47;
@@ -264,7 +264,7 @@
             // 
             this.textBoxNamSX.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxNamSX.Location = new System.Drawing.Point(407, 125);
-            this.textBoxNamSX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNamSX.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNamSX.Name = "textBoxNamSX";
             this.textBoxNamSX.Size = new System.Drawing.Size(151, 20);
             this.textBoxNamSX.TabIndex = 46;
@@ -273,7 +273,7 @@
             // 
             this.textBoxDaoDien.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxDaoDien.Location = new System.Drawing.Point(407, 101);
-            this.textBoxDaoDien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDaoDien.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDaoDien.Name = "textBoxDaoDien";
             this.textBoxDaoDien.Size = new System.Drawing.Size(151, 20);
             this.textBoxDaoDien.TabIndex = 45;
@@ -282,7 +282,7 @@
             // 
             this.textBoxSanXuat.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSanXuat.Location = new System.Drawing.Point(407, 76);
-            this.textBoxSanXuat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSanXuat.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSanXuat.Name = "textBoxSanXuat";
             this.textBoxSanXuat.Size = new System.Drawing.Size(151, 20);
             this.textBoxSanXuat.TabIndex = 44;
@@ -291,7 +291,7 @@
             // 
             this.textBoxThoiLuong.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxThoiLuong.Location = new System.Drawing.Point(407, 3);
-            this.textBoxThoiLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxThoiLuong.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxThoiLuong.Name = "textBoxThoiLuong";
             this.textBoxThoiLuong.Size = new System.Drawing.Size(151, 20);
             this.textBoxThoiLuong.TabIndex = 43;
@@ -300,7 +300,7 @@
             // 
             this.textBoxMoTa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxMoTa.Location = new System.Drawing.Point(113, 52);
-            this.textBoxMoTa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMoTa.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMoTa.Name = "textBoxMoTa";
             this.textBoxMoTa.Size = new System.Drawing.Size(151, 20);
             this.textBoxMoTa.TabIndex = 42;
@@ -309,7 +309,7 @@
             // 
             this.textBoxTenPhim.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxTenPhim.Location = new System.Drawing.Point(113, 28);
-            this.textBoxTenPhim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTenPhim.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTenPhim.Name = "textBoxTenPhim";
             this.textBoxTenPhim.Size = new System.Drawing.Size(151, 20);
             this.textBoxTenPhim.TabIndex = 41;
@@ -318,7 +318,7 @@
             // 
             this.textBoxMaPhim.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxMaPhim.Location = new System.Drawing.Point(113, 3);
-            this.textBoxMaPhim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMaPhim.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMaPhim.Name = "textBoxMaPhim";
             this.textBoxMaPhim.Size = new System.Drawing.Size(151, 20);
             this.textBoxMaPhim.TabIndex = 40;
@@ -327,7 +327,7 @@
             // 
             this.buttonSelectIMG.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonSelectIMG.Location = new System.Drawing.Point(645, 175);
-            this.buttonSelectIMG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSelectIMG.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSelectIMG.Name = "buttonSelectIMG";
             this.buttonSelectIMG.Size = new System.Drawing.Size(75, 24);
             this.buttonSelectIMG.TabIndex = 39;
@@ -340,7 +340,7 @@
             this.pictureBoxIMG.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxIMG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxIMG.Location = new System.Drawing.Point(625, 3);
-            this.pictureBoxIMG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxIMG.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxIMG.Name = "pictureBoxIMG";
             this.pictureBoxIMG.Size = new System.Drawing.Size(113, 163);
             this.pictureBoxIMG.TabIndex = 38;
@@ -462,9 +462,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 473);
             this.Controls.Add(this.panelMain);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormHome";
             this.Text = "FormHome";
+            this.Load += new System.EventHandler(this.FormHome_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();

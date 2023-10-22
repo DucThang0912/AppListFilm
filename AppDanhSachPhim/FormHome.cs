@@ -16,5 +16,10 @@ namespace AppDanhSachPhim
         {
             InitializeComponent();
         }
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

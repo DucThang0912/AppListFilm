@@ -35,6 +35,13 @@ namespace BUS
                 }
             }
         }
+        public static List<User> getAll()
+        {
+            using (var context = new ModelAppMovies())
+            {
+                return context.Users.ToList();
+            }
+        }
         public static bool userExist(string userName)
         {
             using (var context = new ModelAppMovies())

@@ -8,6 +8,12 @@ namespace DAL.Model
 
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            Movies = new HashSet<Movy>();
+        }
+
         public int UserID { get; set; }
 
         [Required]
@@ -21,5 +27,12 @@ namespace DAL.Model
         [Required]
         [StringLength(80)]
         public string Email { get; set; }
+
+        public int? Role { get; set; }
+
+        public virtual UserRole UserRole { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Movy> Movies { get; set; }
     }
 }
