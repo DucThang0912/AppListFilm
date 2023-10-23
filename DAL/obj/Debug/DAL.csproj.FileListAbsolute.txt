@@ -1,0 +1,12 @@
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.dll
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.pdb
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.dll
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.xml
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.dll
+D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.pdb
+D:\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.dll.config

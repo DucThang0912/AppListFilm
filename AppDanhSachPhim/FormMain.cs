@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace AppDanhSachPhim
 {
     public partial class FormMain : Form
     {
+        private Form activeForm = null;
         public FormMain()
         {
             InitializeComponent();
@@ -21,22 +23,8 @@ namespace AppDanhSachPhim
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            NewForm(new FormHome());
         }
 
-        private void HideSubMenu()
-        {
-            if (buttonHome.Visible == true)
-            {
-                buttonHome.Visible = false;
-            }
-            if(buttonFilmHot.Visible == true)
-            {
-                buttonFilmHot.Visible = false;
-            }
-        }
-
-        private Form activeForm = null;
         void NewForm(Form f)
         {
             if(activeForm != null)
@@ -56,17 +44,36 @@ namespace AppDanhSachPhim
             }
             
         }
+        private void quảnLýPhimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormHome());
+            activeForm = null;
 
+        }
         private void buttonFilmHot_Click(object sender, EventArgs e)
         {
             NewForm(new FormPhimHot());
             activeForm = null;
         }
-
-        private void buttonHome_Click(object sender, EventArgs e)
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewForm(new FormHome());
+            NewForm(new FormAccoutManager());
             activeForm = null;
         }
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
+        }
+
+        public event EventHandler logOut;
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logOut(this, new EventArgs());
+        }
+
+      
     }
 }
