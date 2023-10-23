@@ -21,9 +21,9 @@ namespace DAL.Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Genres>()
-                .HasMany(e => e.Movies)
-                .WithMany(e => e.Genres)
-                .Map(m => m.ToTable("MovieGenres").MapLeftKey("GenreID").MapRightKey("MovieID"));
+                 .HasMany(e => e.Movies)
+                 .WithMany(e => e.Genres)
+                 .Map(m => m.ToTable("MovieGenres").MapLeftKey("GenreID").MapRightKey("MovieID"));
 
             modelBuilder.Entity<Movies>()
                 .HasMany(e => e.Images)
@@ -37,7 +37,7 @@ namespace DAL.Model
 
             modelBuilder.Entity<UserRoles>()
                 .HasMany(e => e.Users)
-                .WithOptional(e => e.UserRole)
+                .WithOptional(e => e.UserRoles)
                 .HasForeignKey(e => e.Role);
         }
     }

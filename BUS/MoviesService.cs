@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -120,6 +121,93 @@ namespace BUS
                 {
                     transaction.Rollback();
                     return false;
+                }
+            }
+        }
+
+        public event Action<List<Genres>> MovieGenresLoaded;
+        public void GetMovieGenres(int id)
+        {
+            ModelAppMovies model = new ModelAppMovies();
+            Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == id);
+            if (movie != null)
+            {
+                List<Genres> genresList = movie.Genres.ToList();
+                MovieGenresLoaded?.Invoke(genresList);
+            }
+        }
+
+        public static bool AddGenreToMovie(int movieID, int genreID)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                using(var transaction = model.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == movieID);
+                        Genres genre = model.Genres.FirstOrDefault(g => g.GenreID == genreID);
+
+                        if (movie != null && genre != null)
+                        {
+                            if (!movie.Genres.Contains(genre))
+                            {
+                                movie.Genres.Add(genre);
+                                model.SaveChanges();
+                                transaction.Commit();
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }  
+            }
+        }
+
+        //public static bool UpdateMovieGenres()
+        //{
+        //    using (var model = new ModelAppMovies())
+        //    {
+        //        using (var transaction = model.Database.BeginTransaction())
+        //        {
+        //            try
+        //            {
+
+        //            }
+        //            catch (Exception)
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //}
+
+        public static void RemoveMovieGenres(int movieID)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                using (var transaction = model.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == movieID);
+
+                        if (movie != null)
+                        {
+                            movie.Genres.Clear(); // sài clear để xoá mà ko cần quan tâm đến table movies
+                            model.SaveChanges();
+                            transaction.Commit();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                    }
                 }
             }
         }

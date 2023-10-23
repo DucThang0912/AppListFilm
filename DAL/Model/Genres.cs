@@ -10,7 +10,7 @@ namespace DAL.Model
     {
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-
+        
         public Genres()
         {
             Movies = new HashSet<Movies>();
