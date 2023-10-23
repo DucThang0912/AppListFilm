@@ -193,7 +193,7 @@ namespace AppDanhSachPhim
                         Director = director,
                         Year = year,
                         MovieType = movieType,
-                        View = 0
+                        Views = 0
                     };
 
                     if (MoviesService.addMovie(movie))

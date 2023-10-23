@@ -13,6 +13,7 @@ namespace DAL.Model
         {
             Images = new HashSet<Images>();
             Genres = new HashSet<Genres>();
+            Users = new HashSet<Users>();
         }
 
         [Key]
@@ -41,12 +42,15 @@ namespace DAL.Model
 
         public bool? MovieType { get; set; }
 
-        public int View { get; set; }
+        public int Views { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Images> Images { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Genres> Genres { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Users> Users { get; set; }
     }
 }
