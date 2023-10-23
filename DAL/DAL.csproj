@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{19F5EF59-2CFF-4683-91E4-50B448FB7E6F}</ProjectGuid>
+    <ProjectGuid>{07E36166-1205-4ED2-BE36-8F93D4E717D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -50,12 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Genre.cs" />
-    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\Genres.cs" />
+    <Compile Include="Model\Images.cs" />
     <Compile Include="Model\ModelAppMovies.cs" />
-    <Compile Include="Model\Movy.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserRole.cs" />
+    <Compile Include="Model\Movies.cs" />
+    <Compile Include="Model\Users.cs" />
+    <Compile Include="Model\UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

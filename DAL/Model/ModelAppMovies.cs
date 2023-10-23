@@ -12,30 +12,30 @@ namespace DAL.Model
         {
         }
 
-        public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
-        public virtual DbSet<Movy> Movies { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Genres> Genres { get; set; }
+        public virtual DbSet<Images> Images { get; set; }
+        public virtual DbSet<Movies> Movies { get; set; }
+        public virtual DbSet<UserRoles> UserRoles { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Genre>()
+            modelBuilder.Entity<Genres>()
                 .HasMany(e => e.Movies)
                 .WithMany(e => e.Genres)
                 .Map(m => m.ToTable("MovieGenres").MapLeftKey("GenreID").MapRightKey("MovieID"));
 
-            modelBuilder.Entity<Movy>()
+            modelBuilder.Entity<Movies>()
                 .HasMany(e => e.Images)
-                .WithRequired(e => e.Movy)
+                .WithRequired(e => e.Movies)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Movy>()
+            modelBuilder.Entity<Movies>()
                 .HasMany(e => e.Users)
                 .WithMany(e => e.Movies)
                 .Map(m => m.ToTable("UserMovies").MapLeftKey("MovieID").MapRightKey("UserID"));
 
-            modelBuilder.Entity<UserRole>()
+            modelBuilder.Entity<UserRoles>()
                 .HasMany(e => e.Users)
                 .WithOptional(e => e.UserRole)
                 .HasForeignKey(e => e.Role);

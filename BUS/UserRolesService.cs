@@ -9,7 +9,7 @@ namespace BUS
 {
     public class UserRolesService
     {
-        public static List<UserRole> getRoles()
+        public static List<UserRoles> getRoles()
         {
             using (var context = new ModelAppMovies())
             {

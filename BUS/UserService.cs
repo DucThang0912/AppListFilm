@@ -16,7 +16,7 @@ namespace BUS
                 return context.Users.Any(p => p.UserName == name && p.Password == password);
             }
         }
-        public static bool addUsers(User user) 
+        public static bool addUsers(Users user) 
         {
             var context = new ModelAppMovies();
             using (var transaction = context.Database.BeginTransaction())
@@ -35,7 +35,7 @@ namespace BUS
                 }
             }
         }
-        public static List<User> getAll()
+        public static List<Users> getAll()
         {
             using (var context = new ModelAppMovies())
             {
@@ -57,6 +57,6 @@ namespace BUS
                 var exists = context.Users.Any(p => p.Email == email);
                 return exists;
             }
-        }
+        }   
     }
 }

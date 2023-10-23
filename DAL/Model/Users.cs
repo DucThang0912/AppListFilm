@@ -6,14 +6,9 @@ namespace DAL.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class User
+    public partial class Users
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
-        {
-            Movies = new HashSet<Movy>();
-        }
-
+        [Key]
         public int UserID { get; set; }
 
         [Required]
@@ -30,9 +25,9 @@ namespace DAL.Model
 
         public int? Role { get; set; }
 
-        public virtual UserRole UserRole { get; set; }
+        public virtual UserRoles UserRole { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movy> Movies { get; set; }
+        public virtual ICollection<Movies> Movies { get; set; }
     }
 }
