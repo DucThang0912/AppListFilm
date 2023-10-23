@@ -15,6 +15,33 @@ namespace BUS
             return model.Genres.ToList();
         }
 
+        public static List<Genres> GetGenresByMovieID(int id)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == id);
+                if (movie != null)
+                {
+                    var movieGenresList = movie.Genres.ToList();
+                    return movieGenresList;
+                }
+                else
+                {
+                    return new List<Genres>();
+                }
+            }
+        }
 
+        public event Action<List<Genres>> MovieGenresLoaded;
+        public void GetMovieGenres(int id)
+        {
+            ModelAppMovies model = new ModelAppMovies();
+            Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == id);
+            if (movie != null)
+            {
+                List<Genres> genresList = movie.Genres.ToList();
+                MovieGenresLoaded?.Invoke(genresList);
+            }
+        }
     }
 }
