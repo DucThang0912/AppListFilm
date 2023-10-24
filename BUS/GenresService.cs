@@ -43,5 +43,6 @@ namespace BUS
                 MovieGenresLoaded?.Invoke(genresList);
             }
         }
+
     }
 }

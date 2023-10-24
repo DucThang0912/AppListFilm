@@ -15,6 +15,7 @@ namespace DAL.Model
             Genres = new HashSet<Genres>();
             Users = new HashSet<Users>();
         }
+
         [Key]
         public int MovieID { get; set; }
 

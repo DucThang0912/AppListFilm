@@ -1,6 +1,6 @@
 ﻿namespace AppDanhSachPhim
 {
-    partial class FormPhimHot
+    partial class FormPhimLe
     {
         /// <summary>
         /// Required designer variable.
@@ -36,23 +36,23 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(367, 64);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(562, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(17, 12);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // FormPhimHot
+            // FormPhimLe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 582);
+            this.ClientSize = new System.Drawing.Size(1264, 662);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormPhimHot";
-            this.Text = "FormPhimHot";
-            this.Load += new System.EventHandler(this.FormPhimHot_Load);
+            this.Name = "FormPhimLe";
+            this.Text = "FormPhimLe";
+            this.Load += new System.EventHandler(this.FormPhimLe_Load);
             this.ResumeLayout(false);
 
         }

@@ -169,25 +169,7 @@ namespace BUS
             }
         }
 
-        //public static bool UpdateMovieGenres()
-        //{
-        //    using (var model = new ModelAppMovies())
-        //    {
-        //        using (var transaction = model.Database.BeginTransaction())
-        //        {
-        //            try
-        //            {
-
-        //            }
-        //            catch (Exception)
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //    }
-        //}
-
-        public static void RemoveMovieGenres(int movieID)
+        public static bool UpdateMovieGenres(int movieID, List<Genres> listGenresSelected)
         {
             using (var model = new ModelAppMovies())
             {
@@ -199,9 +181,18 @@ namespace BUS
 
                         if (movie != null)
                         {
-                            movie.Genres.Clear(); // sài clear để xoá mà ko cần quan tâm đến table movies
+                            // Xóa tất cả các thể loại hiện tại của phim
+                            movie.Genres.Clear();
+
+                            // Thêm các thể loại mới
+                            foreach (var genre in listGenresSelected)
+                            {
+                                movie.Genres.Add(genre);
+                            }
+
                             model.SaveChanges();
                             transaction.Commit();
+                            return true;
                         }
                     }
                     catch (Exception)
@@ -209,6 +200,55 @@ namespace BUS
                         transaction.Rollback();
                     }
                 }
+            }
+            return false;
+        }
+
+        public static bool DeleteMovieGenres(int movieID)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                using (var transaction = model.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == movieID);
+
+                        if (movie != null)
+                        {
+                            // Xóa tất cả các thể loại của phim
+                            movie.Genres.Clear();
+                            model.SaveChanges();
+                            transaction.Commit();
+                            return true;
+                        }
+                        return false;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public static List<Movies> GetAllMoviesByMovieType(bool movieType)
+        {
+            using (ModelAppMovies model = new ModelAppMovies())
+            {
+                List<Movies> movies = model.Movies.Where(p => p.MovieType == movieType).ToList();
+
+                List<string> allImagePaths = ImagesService.GetImagesDataByMovieType(movieType);
+                return movies;
+            }
+        }
+
+        public static List<Movies> GetAllMoviesByNewYear()
+        {
+            using (ModelAppMovies model = new ModelAppMovies())
+            {
+                return model.Movies.OrderByDescending(p => p.Year).ToList();
             }
         }
     }

@@ -8,7 +8,7 @@ namespace DAL.Model
     public partial class ModelAppMovies : DbContext
     {
         public ModelAppMovies()
-            : base("name=Model1")
+            : base("name=Model2")
         {
         }
 
@@ -21,9 +21,9 @@ namespace DAL.Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Genres>()
-                 .HasMany(e => e.Movies)
-                 .WithMany(e => e.Genres)
-                 .Map(m => m.ToTable("MovieGenres").MapLeftKey("GenreID").MapRightKey("MovieID"));
+                .HasMany(e => e.Movies)
+                .WithMany(e => e.Genres)
+                .Map(m => m.ToTable("MovieGenres").MapLeftKey("GenreID").MapRightKey("MovieID"));
 
             modelBuilder.Entity<Movies>()
                 .HasMany(e => e.Images)

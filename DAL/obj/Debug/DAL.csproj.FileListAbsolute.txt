@@ -10,3 +10,15 @@ D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.dll
 D:\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.pdb
 D:\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.dll.config
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\DAL.dll.config
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\DAL.dll
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\DAL.pdb
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\EntityFramework.dll
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\EntityFramework.xml
+D:\Code\Winform C#\AppListFilm\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.dll
+D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.pdb

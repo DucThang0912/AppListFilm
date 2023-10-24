@@ -54,8 +54,8 @@
     <Compile Include="Model\Images.cs" />
     <Compile Include="Model\ModelAppMovies.cs" />
     <Compile Include="Model\Movies.cs" />
-    <Compile Include="Model\Users.cs" />
     <Compile Include="Model\UserRoles.cs" />
+    <Compile Include="Model\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

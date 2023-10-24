@@ -87,5 +87,44 @@ namespace BUS
                 }
             }
         }
+
+        public static List<string> GetImagesDataByMovieType(bool movieType)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                var movieIds = model.Movies.Where(p => p.MovieType == movieType).Select(p => p.MovieID).ToList();
+                var images = model.Images.Where(p => movieIds.Contains(p.MovieID)).ToList();
+                List<string> imagePaths = new List<string>();
+
+                foreach (var image in images)
+                {
+                    imagePaths.Add(image.ImageData);
+                }
+
+                return imagePaths;
+            }
+        }
+
+        public static List<string> GetAllImagesByNewYear()
+        {
+            using (var model = new ModelAppMovies())
+            {
+                List<Movies> movies = model.Movies.OrderByDescending(p => p.Year).ToList();
+                List<string> imagePaths = new List<string>();
+
+                foreach (var movie in movies)
+                {
+                    var image = model.Images.FirstOrDefault(p => p.MovieID == movie.MovieID);
+
+                    if (image != null)
+                    {
+                        imagePaths.Add(image.ImageData);
+                    }
+                }
+
+                return imagePaths;
+            }
+        }
+
     }
 }

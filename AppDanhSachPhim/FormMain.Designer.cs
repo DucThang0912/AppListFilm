@@ -96,6 +96,7 @@
             this.buttonNewFilm.TabIndex = 6;
             this.buttonNewFilm.Text = "Phim mới";
             this.buttonNewFilm.UseVisualStyleBackColor = false;
+            this.buttonNewFilm.Click += new System.EventHandler(this.buttonNewFilm_Click);
             // 
             // buttonSeriesFilm
             // 
@@ -110,6 +111,7 @@
             this.buttonSeriesFilm.TabIndex = 5;
             this.buttonSeriesFilm.Text = "Phim bộ";
             this.buttonSeriesFilm.UseVisualStyleBackColor = false;
+            this.buttonSeriesFilm.Click += new System.EventHandler(this.buttonSeriesFilm_Click);
             // 
             // buttonSingleFilm
             // 
@@ -124,6 +126,7 @@
             this.buttonSingleFilm.TabIndex = 4;
             this.buttonSingleFilm.Text = "Phim lẻ";
             this.buttonSingleFilm.UseVisualStyleBackColor = false;
+            this.buttonSingleFilm.Click += new System.EventHandler(this.buttonSingleFilm_Click);
             // 
             // buttonFilmHot
             // 
@@ -212,18 +215,14 @@
             // quảnLýTàiKhoảnToolStripMenuItem
             // 
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
-
             this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
             this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-
             this.toolStripSeparator1.Size = new System.Drawing.Size(204, 6);
-
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -243,9 +242,7 @@
             // quảnLýPhimToolStripMenuItem
             // 
             this.quảnLýPhimToolStripMenuItem.Name = "quảnLýPhimToolStripMenuItem";
-
             this.quảnLýPhimToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-
             this.quảnLýPhimToolStripMenuItem.Text = "Quản lý phim";
             this.quảnLýPhimToolStripMenuItem.Click += new System.EventHandler(this.quảnLýPhimToolStripMenuItem_Click);
             // 

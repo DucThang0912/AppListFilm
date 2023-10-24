@@ -74,6 +74,22 @@ namespace AppDanhSachPhim
             logOut(this, new EventArgs());
         }
 
-      
+        private void buttonSingleFilm_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormPhimLe());
+            activeForm = null;
+        }
+
+        private void buttonSeriesFilm_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormPhimBo());
+            activeForm = null;
+        }
+
+        private void buttonNewFilm_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormPhimMoi());
+            activeForm = null;
+        }
     }
 }
