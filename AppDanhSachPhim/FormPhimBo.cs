@@ -23,7 +23,6 @@ namespace AppDanhSachPhim
         {
             LoadImages();
         }
-
         private void LoadImages()
         {
             try
@@ -62,11 +61,12 @@ namespace AppDanhSachPhim
 
                                 if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
                                 {
-                                    PictureBox pictureBox = CreateAndConfigurePictureBox(imagePath, pictureBoxWidth, pictureBoxHeight);
+                                    PictureBox pictureBox = CreateAndConfigurePictureBox(imagePath, pictureBoxWidth, pictureBoxHeight, movie.MovieID);
 
                                     GroupBox infoGroupBox = CreateAndConfigureInfoGroupBox(movie);
 
                                     Panel imagePanel = new Panel();
+                                    imagePanel.Tag = movie.MovieID; // Gán giá trị ID của phim cho Tag của Panel
                                     imagePanel.Controls.Add(pictureBox);
                                     imagePanel.Controls.Add(infoGroupBox);
                                     pictureBox.Dock = DockStyle.Right;
@@ -75,6 +75,7 @@ namespace AppDanhSachPhim
                                     imagePanel.BackColor = Color.Transparent;
                                     imagePanel.Anchor = AnchorStyles.Top;
                                     tableLayoutPanel1.Controls.Add(imagePanel, column, row);
+                                    pictureBox.Click += PictureBox_Click;
                                 }
                             }
                         }
@@ -87,13 +88,52 @@ namespace AppDanhSachPhim
             }
         }
 
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            Panel panel = sender as Panel;
+
+            // Trích xuất MovieID tương ứng với phim được chọn (có thể lưu trữ trong Tag của panel)
+            if (panel != null && panel.Tag != null && int.TryParse(panel.Tag.ToString(), out int movieID))
+            {
+                string username = Const.UserName;
+                if (string.IsNullOrEmpty(username))
+                {
+                    MessageBox.Show("Vui lòng đăng nhập để thêm phim vào danh sách của bạn.");
+                    return;
+                }
+                int userID = UserService.GetCurrentUserID(username);
+
+                if (userID > 0)
+                {
+                    // Gọi hàm để thêm UserMovie
+                    if (UserMovieService.AddUserMovie(userID, movieID))
+                    {
+                        MessageBox.Show("Đã thêm phim vào danh sách của bạn!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi thêm phim vào danh sách của bạn!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xác định người dùng hiện tại. Vui lòng đăng nhập để thêm phim vào danh sách của bạn.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không thể xác định phim được chọn.");
+            }
+        }
+
         // Tạo và cấu hình PictureBox
-        private PictureBox CreateAndConfigurePictureBox(string imagePath, int width, int height)
+        private PictureBox CreateAndConfigurePictureBox(string imagePath, int width, int height, int movieID)
         {
             PictureBox pictureBox = new PictureBox();
             pictureBox.Image = Image.FromFile(imagePath);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.Size = new Size(width, height);
+            pictureBox.Tag = movieID;
             return pictureBox;
         }
 
