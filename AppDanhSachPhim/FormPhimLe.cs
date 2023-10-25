@@ -141,13 +141,13 @@ namespace AppDanhSachPhim
 
             Label endDateLabel = new Label();
             endDateLabel.Font = regularFont;
-            endDateLabel.Text = "Ngày kết thúc: " + movie.ReleaseDate;
+            endDateLabel.Text = "Ngày kết thúc: " + movie.EndDate;
             endDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(endDateLabel);
 
             Label releaseDateLabel = new Label();
             releaseDateLabel.Font = regularFont;
-            releaseDateLabel.Text = "Ngày công chiếu: " + movie.EndDate;
+            releaseDateLabel.Text = "Ngày công chiếu: " + movie.ReleaseDate;
             releaseDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(releaseDateLabel);
 

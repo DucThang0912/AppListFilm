@@ -91,5 +91,11 @@ namespace AppDanhSachPhim
             NewForm(new FormPhimMoi());
             activeForm = null;
         }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormTimKiem());
+            activeForm = null;
+        }
     }
 }

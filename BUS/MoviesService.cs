@@ -248,8 +248,43 @@ namespace BUS
         {
             using (ModelAppMovies model = new ModelAppMovies())
             {
-                return model.Movies.OrderByDescending(p => p.Year).ToList();
+                return model.Movies.OrderByDescending(p => p.ReleaseDate).ToList();
             }
         }
+
+        public static List<Movies> SearchMovies(string movieName, int? releaseYear, int year, bool? movieType)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                var query = model.Movies.AsQueryable();
+
+                if (!string.IsNullOrEmpty(movieName))
+                {
+                    query = query.Where(p => p.MovieName.Contains(movieName));
+                }
+
+                if (releaseYear.HasValue)
+                {
+                    query = query.Where(p => p.ReleaseDate != null && p.ReleaseDate.Value.Year == releaseYear);
+                }
+
+                if (year > 0)
+                {
+                    query = query.Where(p => p.Year == year);
+                }
+
+                if (movieType == null)
+                {
+                    
+                }
+                else
+                {
+                    query = query.Where(p => p.MovieType == movieType.Value);
+                }
+
+                return query.ToList();
+            }
+        }
+
     }
 }

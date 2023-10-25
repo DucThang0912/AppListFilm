@@ -109,7 +109,7 @@ namespace BUS
         {
             using (var model = new ModelAppMovies())
             {
-                List<Movies> movies = model.Movies.OrderByDescending(p => p.Year).ToList();
+                List<Movies> movies = model.Movies.OrderByDescending(p => p.ReleaseDate).ToList();
                 List<string> imagePaths = new List<string>();
 
                 foreach (var movie in movies)
@@ -125,6 +125,51 @@ namespace BUS
                 return imagePaths;
             }
         }
+
+        public static List<string> GetAllImages()
+        {
+            using (var model = new ModelAppMovies())
+            {
+                List<string> imagePaths = new List<string>();
+
+                // Lấy tất cả các ảnh trong cơ sở dữ liệu
+                var images = model.Images.ToList();
+
+                foreach (var image in images)
+                {
+                    imagePaths.Add(image.ImageData);
+                }
+
+                return imagePaths;
+            }
+        }
+
+        public static List<string> GetImagesForMovies(List<Movies> movies)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                var movieIds = movies.Select(m => m.MovieID).ToList();
+                var images = model.Images.Where(image => movieIds.Contains(image.MovieID)).ToList();
+
+                List<string> imagePaths = new List<string>();
+
+                foreach (var movie in movies)
+                {
+                    var image = images.FirstOrDefault(img => img.MovieID == movie.MovieID);
+                    if (image != null)
+                    {
+                        imagePaths.Add(image.ImageData);
+                    }
+                    else
+                    {
+                        imagePaths.Add(string.Empty); 
+                    }
+                }
+
+                return imagePaths;
+            }
+        }
+
 
     }
 }

@@ -82,6 +82,7 @@
             this.buttonFind.TabIndex = 7;
             this.buttonFind.Text = "Tìm kiếm";
             this.buttonFind.UseVisualStyleBackColor = false;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 
             // buttonNewFilm
             // 

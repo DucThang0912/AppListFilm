@@ -12,33 +12,98 @@ using System.Windows.Forms;
 
 namespace AppDanhSachPhim
 {
-    public partial class FormPhimMoi : Form
+    public partial class FormTimKiem : Form
     {
-        public FormPhimMoi()
+
+        public FormTimKiem()
         {
             InitializeComponent();
         }
 
-        private void FormPhimMoi_Load(object sender, EventArgs e)
+        private void FormTimKiem_Load(object sender, EventArgs e)
         {
-            LoadImages();
+
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.AutoSize = false;
+            tableLayoutPanel1.AutoScroll = true;
+            tableLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
+            LoadImages(MoviesService.GetAllMovies(), ImagesService.GetAllImages());
         }
 
-        private void LoadImages()
+        private void buttonFindFilm_Click(object sender, EventArgs e)
         {
+            string movieName = txtMovieName.Text;
+            int? releaseYear = null;
+            int year = 0;
+            bool? movieType = null; 
+
+            if (!string.IsNullOrEmpty(txtReleaseYear.Text))
+            {
+                if (int.TryParse(txtReleaseYear.Text, out int releaseYearValue))
+                {
+                    releaseYear = releaseYearValue;
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng kiểu!");
+                }
+            }
+
+            if (!string.IsNullOrEmpty(txtYear.Text))
+            {
+                if (int.TryParse(txtYear.Text, out year))
+                {
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng kiểu!");
+                }
+            }
+            if(comboBoxMovieType.SelectedItem != null)
+            {
+                string selectedMovieType = comboBoxMovieType.SelectedItem.ToString();
+                if (selectedMovieType == "Phim lẻ")
+                {
+                    movieType = true;
+                }
+                else if (selectedMovieType == "Phim bộ")
+                {
+                    movieType = false;
+                }
+            }
+            else
+            {
+                movieType = null;
+            }
+
+            List<Movies> searchResults = MoviesService.SearchMovies(movieName, releaseYear, year, movieType);
+            List<string> imagePaths = ImagesService.GetImagesForMovies(searchResults);
+            tableLayoutPanel1.Controls.Clear();
+            LoadImages(searchResults, imagePaths);
+        }
+
+
+        private void LoadImages(List<Movies> listMovie, List<string> listImgage)
+        {
+            
+
             try
             {
-                List<Movies> allMovies = MoviesService.GetAllMoviesByNewYear();
-                List<string> allImagePaths = ImagesService.GetAllImagesByNewYear();
+                List<Movies> allMovies = listMovie;
+                List<string> allImagePaths = listImgage;
 
                 int numColumns = 2;
                 int numRows = (allMovies.Count + numColumns - 1) / numColumns;
 
-                tableLayoutPanel1 = new TableLayoutPanel();
-                tableLayoutPanel1.ColumnCount = 2;
-                tableLayoutPanel1.Dock = DockStyle.Fill;
-                tableLayoutPanel1.AutoSize = false;
-                tableLayoutPanel1.AutoScroll = true;
+                //tableLayoutPanel1 = new TableLayoutPanel();
+                //tableLayoutPanel1.ColumnCount = 2;
+                //tableLayoutPanel1.Dock = DockStyle.Fill;
+                //tableLayoutPanel1.AutoSize = false;
+                //tableLayoutPanel1.AutoScroll = true;
+                //tableLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
 
                 int pictureBoxWidth = 150;
                 int pictureBoxHeight = 200;
@@ -80,6 +145,7 @@ namespace AppDanhSachPhim
                         }
                     }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -117,7 +183,6 @@ namespace AppDanhSachPhim
             {
                 movieTypeLabel.Text = "Loại phim: Phim bộ";
             }
-            //movieTypeLabel.Text = movie.MovieType ? "Loại phim: Phim lẻ" : "Loại phim: Phim bộ";
             movieTypeLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(movieTypeLabel);
 
@@ -151,7 +216,6 @@ namespace AppDanhSachPhim
             releaseDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(releaseDateLabel);
 
-
             Label durationLabel = new Label();
             durationLabel.Font = regularFont;
             durationLabel.Text = "Thời lượng: " + movie.Duration;
@@ -166,5 +230,8 @@ namespace AppDanhSachPhim
 
             return infoGroupBox;
         }
+
+
+
     }
 }
