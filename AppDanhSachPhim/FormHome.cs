@@ -188,6 +188,7 @@ namespace AppDanhSachPhim
                 }
                 else //thêm mới phim
                 {
+                    
                     Movies movie = new Movies()
                     {
                         MovieID = movieID,
@@ -247,7 +248,7 @@ namespace AppDanhSachPhim
                     {
                         if (MoviesService.KTMovieID(id))
                         {
-                            if ( MoviesService.DeleteMovieGenres(id) && MoviesService.deleteMovie(id) )
+                            if (MoviesService.DeleteMovieGenres(id) && MoviesService.deleteMovie(id))
                             {
                                 LoadData();
                                 MessageBox.Show("Xoá thành công!");
@@ -304,12 +305,19 @@ namespace AppDanhSachPhim
                     textBoxMovieName.Text = selectedRow.Cells[1].Value.ToString();
                     textBoxDuration.Text = selectedRow.Cells[2].Value.ToString();
                     dateTimePickerReleaseDate.Text = selectedRow.Cells[3].Value.ToString();
-                    dateTimePickerEndDate.Text = selectedRow.Cells[4].Value.ToString();
+                    if (selectedRow.Cells[4].Value == null)
+                    {
+                        dateTimePickerReleaseDate.Text = null;
+                    }
+                    else
+                    {
+                        dateTimePickerEndDate.Text = selectedRow.Cells[4].Value.ToString();
+                    }
                     textBoxProduction.Text = selectedRow.Cells[5].Value.ToString();
                     textBoxDirector.Text = selectedRow.Cells[6].Value.ToString();
                     textBoxYear.Text = selectedRow.Cells[7].Value.ToString();
-                    radioButtonPhimLe.Checked = selectedRow.Cells[8].Value.ToString() == radioButtonPhimLe.Text;
-                    radioButtonPhimBo.Checked = selectedRow.Cells[8].Value.ToString() == radioButtonPhimBo.Text;
+                    radioButtonPhimLe.Checked = selectedRow.Cells[8].Value.ToString() == "Phim lẻ";
+                    radioButtonPhimBo.Checked = selectedRow.Cells[8].Value.ToString() == "Phim bộ";
                     textBoxDescription.Text = selectedRow.Cells[9].Value.ToString();
 
                     imagePath = selectedRow.Cells[10].Value.ToString();
@@ -415,6 +423,21 @@ namespace AppDanhSachPhim
             if (Const.isExit)
             {
                 System.Windows.Forms.Application.Exit();
+            }
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radioButtonPhimLe_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButtonPhimLe.Checked)
+            {
+                label7.Visible = false;
+                dateTimePickerEndDate.Visible = false;
+                dateTimePickerEndDate.Value = DateTime.MinValue;
             }
         }
     }

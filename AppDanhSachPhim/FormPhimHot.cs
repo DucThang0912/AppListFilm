@@ -29,7 +29,7 @@ namespace AppDanhSachPhim
 
         private void FormPhimHot_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

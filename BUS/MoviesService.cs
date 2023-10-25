@@ -224,7 +224,7 @@ namespace BUS
                 {
                     try
                     {
-                        Movies movie = model.Movies.Include("Genres").FirstOrDefault(p => p.MovieID == movieID);
+                        Movies movie = model.Movies.Include(p => p.Genres).FirstOrDefault(p => p.MovieID == movieID);
 
                         if (movie != null)
                         {
