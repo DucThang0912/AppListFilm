@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // label1
@@ -42,20 +41,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Comming soon :)))";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(324, 232);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(630, 62);
-            this.progressBar1.TabIndex = 0;
-            // 
             // FormPhimHot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1392, 716);
-            this.Controls.Add(this.progressBar1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPhimHot";
             this.Text = "FormPhimHot";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhimHot_FormClosed);
@@ -67,6 +58,5 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

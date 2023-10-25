@@ -90,40 +90,40 @@ namespace AppDanhSachPhim
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            Panel panel = sender as Panel;
+        //    Panel panel = sender as Panel;
 
-            // Trích xuất MovieID tương ứng với phim được chọn (có thể lưu trữ trong Tag của panel)
-            if (panel != null && panel.Tag != null && int.TryParse(panel.Tag.ToString(), out int movieID))
-            {
-                string username = Const.UserName;
-                if (string.IsNullOrEmpty(username))
-                {
-                    MessageBox.Show("Vui lòng đăng nhập để thêm phim vào danh sách của bạn.");
-                    return;
-                }
-                int userID = UserService.GetCurrentUserID(username);
+        //    // Trích xuất MovieID tương ứng với phim được chọn (có thể lưu trữ trong Tag của panel)
+        //    if (panel != null && panel.Tag != null && int.TryParse(panel.Tag.ToString(), out int movieID))
+        //    {
+        //        string username = Const.UserName;
+        //        if (string.IsNullOrEmpty(username))
+        //        {
+        //            MessageBox.Show("Vui lòng đăng nhập để thêm phim vào danh sách của bạn.");
+        //            return;
+        //        }
+        //        int userID = UserService.GetCurrentUserID(username);
 
-                if (userID > 0)
-                {
-                    // Gọi hàm để thêm UserMovie
-                    if (UserMovieService.AddUserMovie(userID, movieID))
-                    {
-                        MessageBox.Show("Đã thêm phim vào danh sách của bạn!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lỗi khi thêm phim vào danh sách của bạn!");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Không thể xác định người dùng hiện tại. Vui lòng đăng nhập để thêm phim vào danh sách của bạn.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không thể xác định phim được chọn.");
-            }
+        //        if (userID > 0)
+        //        {
+        //            // Gọi hàm để thêm UserMovie
+        //            if (UserMovieService.AddUserMovie(userID, movieID))
+        //            {
+        //                MessageBox.Show("Đã thêm phim vào danh sách của bạn!");
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Lỗi khi thêm phim vào danh sách của bạn!");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Không thể xác định người dùng hiện tại. Vui lòng đăng nhập để thêm phim vào danh sách của bạn.");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Không thể xác định phim được chọn.");
+        //    }
         }
 
         // Tạo và cấu hình PictureBox
