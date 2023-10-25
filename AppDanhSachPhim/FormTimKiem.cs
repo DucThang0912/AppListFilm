@@ -28,15 +28,17 @@ namespace AppDanhSachPhim
             tableLayoutPanel1.AutoSize = false;
             tableLayoutPanel1.AutoScroll = true;
             tableLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset; 
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+            
             LoadImages(MoviesService.GetAllMovies(), ImagesService.GetAllImages());
         }
-
-        private void buttonFindFilm_Click(object sender, EventArgs e)
+        private void buttonFindFilm_Click_1(object sender, EventArgs e)
         {
             string movieName = txtMovieName.Text;
             int? releaseYear = null;
             int year = 0;
-            bool? movieType = null; 
+            bool? movieType = null;
 
             if (!string.IsNullOrEmpty(txtReleaseYear.Text))
             {
@@ -54,14 +56,14 @@ namespace AppDanhSachPhim
             {
                 if (int.TryParse(txtYear.Text, out year))
                 {
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng nhập đúng kiểu!");
                 }
             }
-            if(comboBoxMovieType.SelectedItem != null)
+            if (comboBoxMovieType.SelectedItem != null)
             {
                 string selectedMovieType = comboBoxMovieType.SelectedItem.ToString();
                 if (selectedMovieType == "Phim lẻ")
@@ -83,7 +85,6 @@ namespace AppDanhSachPhim
             tableLayoutPanel1.Controls.Clear();
             LoadImages(searchResults, imagePaths);
         }
-
 
         private void LoadImages(List<Movies> listMovie, List<string> listImgage)
         {
@@ -126,7 +127,8 @@ namespace AppDanhSachPhim
                                     Panel imagePanel = new Panel();
                                     imagePanel.Controls.Add(pictureBox);
                                     imagePanel.Controls.Add(infoGroupBox);
-                                    pictureBox.Dock = DockStyle.Right;
+                                    imagePanel.Dock = DockStyle.Top;
+                                    pictureBox.Dock = DockStyle.Top;
                                     infoGroupBox.Dock = DockStyle.Right;
                                     imagePanel.Size = new Size(pictureBoxWidth + infoGroupBox.Width, pictureBoxHeight);
                                     imagePanel.BackColor = Color.Transparent;
@@ -198,13 +200,13 @@ namespace AppDanhSachPhim
 
             Label endDateLabel = new Label();
             endDateLabel.Font = regularFont;
-            endDateLabel.Text = "Ngày kết thúc: " + movie.EndDate;
+            endDateLabel.Text = "Ngày kết thúc: " + movie.EndDate.Value.ToShortDateString();
             endDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(endDateLabel);
 
             Label releaseDateLabel = new Label();
             releaseDateLabel.Font = regularFont;
-            releaseDateLabel.Text = "Ngày công chiếu: " + movie.ReleaseDate;
+            releaseDateLabel.Text = "Ngày công chiếu: " + movie.ReleaseDate.Value.ToShortDateString();
             releaseDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(releaseDateLabel);
 
@@ -223,7 +225,14 @@ namespace AppDanhSachPhim
             return infoGroupBox;
         }
 
+        private void FormTimKiem_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
+        }
 
-
+      
     }
 }

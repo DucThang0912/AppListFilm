@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,14 @@ namespace AppDanhSachPhim
         private void FormHelp_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void FormHelp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
         }
     }
 }

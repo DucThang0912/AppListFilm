@@ -40,6 +40,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
@@ -52,6 +53,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
@@ -64,6 +66,7 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUserName.Location = new System.Drawing.Point(135, 93);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
@@ -72,6 +75,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Location = new System.Drawing.Point(135, 146);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
@@ -81,6 +85,7 @@
             // 
             // buttonLogin
             // 
+            this.buttonLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLogin.Location = new System.Drawing.Point(135, 223);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
@@ -92,6 +97,7 @@
             // 
             // checkBoxHidePass
             // 
+            this.checkBoxHidePass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBoxHidePass.AutoSize = true;
             this.checkBoxHidePass.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBoxHidePass.Location = new System.Drawing.Point(135, 184);
@@ -105,6 +111,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
@@ -117,6 +124,7 @@
             // 
             // buttonRegister
             // 
+            this.buttonRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRegister.Location = new System.Drawing.Point(278, 223);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegister.Name = "buttonRegister";

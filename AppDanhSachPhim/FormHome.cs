@@ -49,8 +49,8 @@ namespace AppDanhSachPhim
                     dataGridViewMain.Rows[index].Cells[0].Value = item.MovieID;
                     dataGridViewMain.Rows[index].Cells[1].Value = item.MovieName;
                     dataGridViewMain.Rows[index].Cells[2].Value = item.Duration;
-                    dataGridViewMain.Rows[index].Cells[3].Value = item.ReleaseDate;
-                    dataGridViewMain.Rows[index].Cells[4].Value = item.EndDate;
+                    dataGridViewMain.Rows[index].Cells[3].Value = item.ReleaseDate.Value.ToShortDateString();
+                    dataGridViewMain.Rows[index].Cells[4].Value = item.EndDate.Value.ToShortDateString();
                     dataGridViewMain.Rows[index].Cells[5].Value = item.Production;
                     dataGridViewMain.Rows[index].Cells[6].Value = item.Director;
                     dataGridViewMain.Rows[index].Cells[7].Value = item.Year;
@@ -130,7 +130,19 @@ namespace AppDanhSachPhim
             }
             return false;
         }
-
+       void clearInput()
+       {
+            textBoxMovieID.Clear();textBoxMovieName.Clear(); textBoxDescription.Clear();
+            for (int i = 0; i < checkedListBoxGenres.Items.Count; i++)
+            {
+                checkedListBoxGenres.SetItemChecked(i, false);
+            }
+            textBoxDuration.Clear();
+            radioButtonPhimLe.Checked = radioButtonPhimBo.Checked = false;
+            textBoxProduction.Clear(); textBoxDirector.Clear(); textBoxYear.Clear();
+            dateTimePickerReleaseDate.Value =dateTimePickerEndDate.Value= DateTime.Now;
+            pictureBoxIMG.Image = null;
+        }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -177,6 +189,7 @@ namespace AppDanhSachPhim
                         if (AddImages(movieID))
                         {
                             MessageBox.Show("Cập nhật thành công!");
+                            clearInput();
                         }
                         else
                         {
@@ -213,12 +226,14 @@ namespace AppDanhSachPhim
                         {
                             LoadData();
                             MessageBox.Show("Thêm thành công!");
+                            clearInput();
                         }
                         else
                         {
                             if (AddImages(movie.MovieID))
                             {
                                 MessageBox.Show("Thêm thành công!");
+                                clearInput();
                             }
                             else
                             {
@@ -252,10 +267,10 @@ namespace AppDanhSachPhim
                         {
                             if (MoviesService.DeleteMovieGenres(id) && MoviesService.deleteMovie(id))
                             {
-                                ClearInput();
                                 LoadData();
                                 MessageBox.Show("Xoá thành công!");
-      
+                                clearInput();
+
                             }
                             else
                             {
@@ -283,32 +298,6 @@ namespace AppDanhSachPhim
                 MessageBox.Show("Lỗi!");
             }
         }
-
-        private void ClearInput()
-        {
-            textBoxMovieID.Clear();
-            textBoxMovieName.Clear();
-            textBoxDescription.Clear();
-            textBoxDuration.Clear();
-            textBoxProduction.Clear();
-            textBoxDirector.Clear();
-            textBoxYear.Clear();
-
-            for (int i = 0; i < checkedListBoxGenres.Items.Count; i++)
-            {
-                checkedListBoxGenres.SetItemChecked(i, false);
-            }
-
-            radioButtonPhimLe.Checked = false;
-            radioButtonPhimBo.Checked = false;
-
-            dateTimePickerReleaseDate.Value = DateTime.Today;
-            dateTimePickerEndDate.Value = DateTime.Today;
-
-            pictureBoxIMG.Image = null; 
-        }
-
-
 
         private void buttonSelectIMG_Click(object sender, EventArgs e)
         {
@@ -455,14 +444,5 @@ namespace AppDanhSachPhim
             }
         }
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void radioButtonPhimLe_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
