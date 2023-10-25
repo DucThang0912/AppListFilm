@@ -19,15 +19,17 @@ namespace AppDanhSachPhim
             InitializeComponent();
         }
 
-        private void FormPhimHot_Load(object sender, EventArgs e)
+        private void FormPhimHot_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
         }
 
-        
+        private void FormPhimHot_Load(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

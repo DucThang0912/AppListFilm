@@ -27,4 +27,37 @@ D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.pdb
 D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimLe.resources
 D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimBo.resources
 D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimMoi.resources
+<<<<<<< HEAD
 D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTimKiem.resources
+=======
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.AssemblyReference.cache
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormAccoutManager.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormHome.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormLogin.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormMain.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimBo.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimHot.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimLe.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormPhimMoi.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormRegister.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.Properties.Resources.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.GenerateResource.cache
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.CoreCompileInputs.cache
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.exe
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.pdb
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\AppDanhSachPhim.exe.config
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\AppDanhSachPhim.exe
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\AppDanhSachPhim.pdb
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\BUS.dll
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\DAL.dll
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.dll
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\BUS.pdb
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\BUS.dll.config
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\DAL.pdb
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\DAL.dll.config
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.xml
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.CopyComplete
+>>>>>>> 4fb25fe2ed43a24d3958d23ec28bbbdd0be7afef
+D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTrangChu.resources

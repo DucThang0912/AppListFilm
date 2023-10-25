@@ -411,5 +411,13 @@ namespace AppDanhSachPhim
 
             HandleMovieGenresLoaded(genresList);
         }
+
+        private void FormHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
+        }
     }
 }

@@ -125,7 +125,7 @@ namespace AppDanhSachPhim
                 MessageBox.Show("Không thể gửi OTP. Vui lòng kiểm tra lại thông tin email và mật khẩu.");
             }
         }
-        private void btnRegisterConfirm_Click(object sender, EventArgs e)
+        private void btnRegisterConfirm_Click(object sender, EventArgs e) // ấn f5 // xong ấn f10 để chạy từng dòng
         {
             if (int.TryParse(txtOTP.Text, out int enteredOTP))
             {
@@ -134,12 +134,14 @@ namespace AppDanhSachPhim
                     string username = txtUser.Text;
                     string password = txtPassword.Text;
                     string email = txtEmail.Text;
+                    int role = 3;
 
                     Users user = new Users()
                     {
                         UserName = username,
                         Password = password,
-                        Email = email
+                        Email = email,
+                        Role = role
                     };
 
                     if (UserService.addUsers(user))

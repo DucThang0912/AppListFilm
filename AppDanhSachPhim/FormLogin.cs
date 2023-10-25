@@ -19,16 +19,18 @@ namespace AppDanhSachPhim
         }
         void clearInput()
         {
-            txtUserName.Clear();
+            //txtUserName.Clear();
             txtPassword.Clear();
             checkBoxHidePass.Checked = false;
         }
         private void buttonLogin_Click(object sender, EventArgs e)
-        { 
+        {
+            
             string username = txtUserName.Text;
             string password = txtPassword.Text;
             if (UserService.AuthenticateUser(username, password))
             {
+                Const.UserName = username; 
                 FormMain formMain = new FormMain();
                 formMain.Show();
                 this.Hide();
@@ -79,6 +81,14 @@ namespace AppDanhSachPhim
         private void FormLogin_Load(object sender, EventArgs e)
         {
             txtUserName.Text = "admin";txtPassword.Text = "admin";
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
         }
     }
 }

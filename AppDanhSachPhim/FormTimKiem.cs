@@ -22,7 +22,6 @@ namespace AppDanhSachPhim
 
         private void FormTimKiem_Load(object sender, EventArgs e)
         {
-
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -97,13 +96,6 @@ namespace AppDanhSachPhim
 
                 int numColumns = 2;
                 int numRows = (allMovies.Count + numColumns - 1) / numColumns;
-
-                //tableLayoutPanel1 = new TableLayoutPanel();
-                //tableLayoutPanel1.ColumnCount = 2;
-                //tableLayoutPanel1.Dock = DockStyle.Fill;
-                //tableLayoutPanel1.AutoSize = false;
-                //tableLayoutPanel1.AutoScroll = true;
-                //tableLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
 
                 int pictureBoxWidth = 150;
                 int pictureBoxHeight = 200;
