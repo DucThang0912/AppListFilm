@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,11 +92,10 @@ namespace AppDanhSachPhim
             else { return false; }
         }
 
-        private bool AddImages()
+        private bool AddImages(int movieID)
         {
             try
             {
-                int movieID = int.Parse(textBoxMovieID.Text);
                 if (ImagesService.KTMovieID(movieID)) // nếu có sẽ sửa lại đường dẫn ảnh
                 {
                     if (ImagesService.UpdateImages(movieID, imagePath))
@@ -135,11 +135,6 @@ namespace AppDanhSachPhim
         {
             try
             {
-                if (textBoxMovieID.Text.Trim() == "")
-                {
-                    MessageBox.Show("Vui lòng nhập mã phim!");
-                    return;
-                }
                 if (KTDate() == false)
                 {
                     MessageBox.Show("Ngày kết thúc phải sau ngày công chiếu!");
@@ -151,7 +146,15 @@ namespace AppDanhSachPhim
                     return;
                 }
 
-                int movieID = int.Parse(textBoxMovieID.Text);
+                int movieID;
+                if (textBoxMovieID.Text == "")
+                {
+                    movieID = 0;
+                }
+                else
+                {
+                    movieID = int.Parse(textBoxMovieID.Text);
+                }
                 string movieName = textBoxMovieName.Text;
                 string description = textBoxDescription.Text;
                 string duration = textBoxDuration.Text;
@@ -171,7 +174,7 @@ namespace AppDanhSachPhim
 
                         UpdateMovieGenres(movieID, selectedGenres);
 
-                        if (AddImages())
+                        if (AddImages(movieID))
                         {
                             MessageBox.Show("Cập nhật thành công!");
                         }
@@ -191,7 +194,6 @@ namespace AppDanhSachPhim
                     
                     Movies movie = new Movies()
                     {
-                        MovieID = movieID,
                         MovieName = movieName,
                         Description = description,
                         Duration = duration,
@@ -206,7 +208,7 @@ namespace AppDanhSachPhim
 
                     if (MoviesService.addMovie(movie))
                     {
-                        SaveMovieGenres(movieID);
+                        SaveMovieGenres(movie.MovieID);
                         if (imagePath == null)
                         {
                             LoadData();
@@ -214,7 +216,7 @@ namespace AppDanhSachPhim
                         }
                         else
                         {
-                            if (AddImages())
+                            if (AddImages(movie.MovieID))
                             {
                                 MessageBox.Show("Thêm thành công!");
                             }
@@ -250,6 +252,7 @@ namespace AppDanhSachPhim
                         {
                             if (MoviesService.DeleteMovieGenres(id) && MoviesService.deleteMovie(id))
                             {
+                                ClearInput();
                                 LoadData();
                                 MessageBox.Show("Xoá thành công!");
       
@@ -280,6 +283,32 @@ namespace AppDanhSachPhim
                 MessageBox.Show("Lỗi!");
             }
         }
+
+        private void ClearInput()
+        {
+            textBoxMovieID.Clear();
+            textBoxMovieName.Clear();
+            textBoxDescription.Clear();
+            textBoxDuration.Clear();
+            textBoxProduction.Clear();
+            textBoxDirector.Clear();
+            textBoxYear.Clear();
+
+            for (int i = 0; i < checkedListBoxGenres.Items.Count; i++)
+            {
+                checkedListBoxGenres.SetItemChecked(i, false);
+            }
+
+            radioButtonPhimLe.Checked = false;
+            radioButtonPhimBo.Checked = false;
+
+            dateTimePickerReleaseDate.Value = DateTime.Today;
+            dateTimePickerEndDate.Value = DateTime.Today;
+
+            pictureBoxIMG.Image = null; 
+        }
+
+
 
         private void buttonSelectIMG_Click(object sender, EventArgs e)
         {
@@ -433,12 +462,7 @@ namespace AppDanhSachPhim
 
         private void radioButtonPhimLe_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButtonPhimLe.Checked)
-            {
-                label7.Visible = false;
-                dateTimePickerEndDate.Visible = false;
-                dateTimePickerEndDate.Value = DateTime.MinValue;
-            }
+            
         }
     }
 }

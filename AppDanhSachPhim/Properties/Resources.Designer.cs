@@ -79,5 +79,15 @@ namespace AppDanhSachPhim.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4817653034190_73527bc35835fe300282332592c96e61 {
+            get {
+                object obj = ResourceManager.GetObject("z4817653034190_73527bc35835fe300282332592c96e61", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

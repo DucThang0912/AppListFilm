@@ -193,7 +193,7 @@
             this.pictureBox2.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.icons8_user_48;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(1071, 14);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(37, 25);
             this.pictureBox2.TabIndex = 3;
@@ -202,7 +202,7 @@
             // txtShowUserName
             // 
             this.txtShowUserName.Location = new System.Drawing.Point(1116, 14);
-            this.txtShowUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtShowUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowUserName.Name = "txtShowUserName";
             this.txtShowUserName.ReadOnly = true;
             this.txtShowUserName.Size = new System.Drawing.Size(95, 22);
@@ -214,7 +214,7 @@
             this.pictureBox1.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.dangxuat;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1220, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 44);
             this.pictureBox1.TabIndex = 1;
@@ -302,6 +302,7 @@
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
+            this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
             // 
             // FormMain
             // 

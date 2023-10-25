@@ -5,18 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppDanhSachPhim
 {
-    public partial class FormTrangChu : Form
+    public partial class FormHelp : Form
     {
-        public FormTrangChu()
+        public FormHelp()
         {
             InitializeComponent();
         }
 
+        private void FormHelp_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
