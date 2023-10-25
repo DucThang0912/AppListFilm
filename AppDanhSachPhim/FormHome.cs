@@ -40,7 +40,7 @@ namespace AppDanhSachPhim
                 checkedListBoxGenres.DataSource = GenresService.GetAllGenres();
                 checkedListBoxGenres.DisplayMember = "GenreName";
                 checkedListBoxGenres.ValueMember = "GenreID";
-
+                dataGridViewMain.Columns[0].Visible = false;
                 dataGridViewMain.Rows.Clear();
                 foreach (var item in MoviesService.GetAllMovies())
                 {
@@ -162,7 +162,7 @@ namespace AppDanhSachPhim
                 int year = int.Parse(textBoxYear.Text);
                 bool movieType = KTMovieType();
 
-                if (MoviesService.KTMovieID(movieID)) //sửa lại phim
+                if (MoviesService.KTMovieName(movieName)) //sửa lại phim
                 {
                     if (MoviesService.UpdateMovie(movieID, movieName, description, duration, 
                         releaseDate, endDate, production, director, year, movieType))
@@ -247,7 +247,7 @@ namespace AppDanhSachPhim
                     {
                         if (MoviesService.KTMovieID(id))
                         {
-                            if (MoviesService.deleteMovie(id) && MoviesService.DeleteMovieGenres(id))
+                            if ( MoviesService.DeleteMovieGenres(id) && MoviesService.deleteMovie(id) )
                             {
                                 LoadData();
                                 MessageBox.Show("Xoá thành công!");

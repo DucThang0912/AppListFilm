@@ -40,14 +40,20 @@ namespace BUS
 
        
 
-        public static bool KTMovieID(int movieID)
+        public static bool KTMovieName(string movieName)
         {
             using (var model = new ModelAppMovies())
             {
-                return model.Movies.Any(p => p.MovieID == movieID);
+                return model.Movies.Any(p => p.MovieName == movieName);
             }
         }
-
+        public static bool KTMovieID(int id)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                return model.Movies.Any(p => p.MovieID == id);
+            }
+        }
         public static bool UpdateMovie(int movieID, string movieName, string description, string duration, 
                                        DateTime releaseDate, DateTime endDate, string production,
                                        string director, int year, bool movieType)
@@ -291,5 +297,6 @@ namespace BUS
             }
         }
 
+      
     }
 }
