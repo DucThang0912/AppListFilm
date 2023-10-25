@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Người thực hiện: Nguyễn Đức Thắng, Ngô Văn Huy Hoàng
+
+Giới thiệu 
+Ứng dụng "List Film" là một ứng dụng quản lý danh sách phim đa năng, giúp bạn theo dõi và cập nhật thông tin về các bộ phim yêu thích của mình. Dưới đây, chúng tôi sẽ giúp bạn hiểu rõ hơn về cách sử dụng ứng dụng này và giải đáp một số câu hỏi thường gặp.
+
+Lưu lý: có 3 loại tài khoản là:
+          1. Admin: có toàn quyền làm mọi thứ 
+          2. Quản lý: có quyền quản lý (thêm, sửa, xoá)
+          3. Người dùng: chỉ có quyền xem và tìm kiếm phim
+
+Câu hỏi và câu trả lời
+Q1: Làm thế nào để thêm một bộ phim mới vào danh sách?
+A1: Để thêm một bộ phim mới:
+
+Mở ứng dụng "List Film", sau khi đăng nhập vào tài khoản có quyền admin, sau đó vào "Quản lý" và chọn "Quản lý phim".Điền thông tin liên quan về bộ phim, chẳng hạn như tên phim, thời lượng, ngày công chiếu, và thể loại.
+Sau đó, tải hình ảnh bìa cho phim bằng cách nhấn nút "Chọn ảnh".
+Cuối cùng nhấn nút "Update" để thêm phim vào csdl.
+
+Q2: Làm thế nào để chỉnh sửa thông tin về một bộ phim đã có?
+A2: Để chỉnh sửa thông tin về một bộ phim đã có:
+
+Mở ứng dụng "List Film", sau khi đăng nhập vào tài khoản có quyền admin, sau đó vào "Quản lý" và chọn "Quản lý phim".
+Chọn 1 phim muốn sửa bằng cách click vào phim trong dataGridView, dữ liệu sẽ hiển thị lên các textBox, comboBox và checkListBox (để hiển thị thể loại) và cả hình ảnhSau khi chỉnh sửa xong hết.
+Cuối cùng nhấn nút "Update" để thêm phim vào csdl (sẽ so sánh tên phim nếu trùng thì sẽ sủa còn nếu ko trùng thì sẽ thêm mới).
+
+Q3: Làm thế nào để xóa một bộ phim khỏi danh sách?
+A3: Để xóa một bộ phim:
+
+Mở ứng dụng "List Film", sau khi đăng nhập vào tài khoản có quyền admin, sau đó vào "Quản lý" và chọn "Quản lý phim".
+Chọn 1 phim muốn sửa bằng cách click vào phim trong dataGridView, dữ liệu sẽ hiển thị lên các textBox, comboBox và checkListBox (để hiển thị thể loại) và cả hình ảnh
+Chọn nút "Xóa".Xác nhận quyết định xóa trong hộp thoại xác nhận.
+
+Q4: Làm thế nào để tìm kiếm một bộ phim cụ thể?
+A4: Để tìm kiếm một bộ phim cụ thể:
+Mở ứng dụng "List Film", sau khi đăng nhập vào tài khoản.
+Ở giao diện chính, thanh bên trái, ấn vào "Tìm kiếm".Sử dụng ô tìm kiếm hoặc tìm tùy chọn tương tự trong giao diện.
+Nhập tên bộ phim hoặc các thông tin khác cần tìm.
+Kết quả tìm kiếm sẽ xuất hiện, cho bạn biết liệu bộ phim đó có trong danh sách hay không.
+
+Q4: Làm thế nào để quản lý tài khoản?
+A4: Để quản lý tài quản:
+
+Mở ứng dụng "List Film", sau khi đăng nhập vào tài khoản có quyền admin, sau đó vào "Hệ thống" và chọn "Quản lý tài quản".
+Các chức năng tương tự như thêm, sửa, chỉnh sửa phim đã nêu ở trên.
+
+Kết luận
+Ứng dụng "List Film" là một công cụ tiện lợi để quản lý danh sách phim yêu thích của bạn. Nếu bạn có thêm câu hỏi hoặc cần hỗ trợ, xin vui lòng liên hệ với chúng tôi qua gmail: nvhhoang286@gmail.com hoặc ducthang140912@gmail.com.
+
+Cảm ơn bạn đã sử dụng ứng dụng "List Film"!</value>
+  </data>
 </root>

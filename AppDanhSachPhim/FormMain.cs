@@ -140,6 +140,12 @@ namespace AppDanhSachPhim
             NewForm(new FormTrangChu());
             activeForm = null;
         }
+
+        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormHelp());
+            activeForm = null;
+        }
     }
   
 }

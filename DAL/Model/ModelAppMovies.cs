@@ -8,7 +8,7 @@ namespace DAL.Model
     public partial class ModelAppMovies : DbContext
     {
         public ModelAppMovies()
-            : base("name=Model1") // c?a m là 2 , c?u t là 1
+            : base("name=Model2") // c?a m là 2 , c?u t là 1
         {
         }
 

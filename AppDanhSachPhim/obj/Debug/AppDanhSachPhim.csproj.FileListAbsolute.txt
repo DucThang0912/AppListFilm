@@ -63,3 +63,4 @@ D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.CopyCo
 D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTrangChu.resources
 D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTimKiem.resources
 D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTrangChu.resources
+D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormHelp.resources
