@@ -61,3 +61,5 @@ D:\Hutech\C#\AppListFilm\AppDanhSachPhim\bin\Debug\EntityFramework.xml
 D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.csproj.CopyComplete
 >>>>>>> 4fb25fe2ed43a24d3958d23ec28bbbdd0be7afef
 D:\Code\Winform C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTrangChu.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTimKiem.resources
+D:\Hutech\C#\AppListFilm\AppDanhSachPhim\obj\Debug\AppDanhSachPhim.FormTrangChu.resources

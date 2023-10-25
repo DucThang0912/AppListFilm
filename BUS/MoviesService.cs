@@ -1,7 +1,9 @@
 ﻿using DAL.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,45 +38,7 @@ namespace BUS
             }
         }
 
-        public static bool deleteMovie(int id)
-        {
-            using (var model = new ModelAppMovies())
-            {
-                using (var transaction = model.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        var existingMovie = model.Movies.FirstOrDefault(p => p.MovieID == id);
-                        var existingImage = model.Images.FirstOrDefault(p => p.MovieID == id);
-                        if (existingMovie != null && existingImage != null)
-                        {
-                            model.Movies.Remove(existingMovie);
-                            model.Images.Remove(existingImage);
-                            model.SaveChanges();
-                            transaction.Commit();
-                            return true;
-                        }
-                        else if(existingMovie != null && existingImage == null)
-                        {
-                            model.Movies.Remove(existingMovie);
-                            model.SaveChanges();
-                            transaction.Commit();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        transaction.Rollback();
-                        return false;
-                    }
-                }
-            }
-        }
-
+       
 
         public static bool KTMovieID(int movieID)
         {
@@ -169,7 +133,7 @@ namespace BUS
             }
         }
 
-        public static bool UpdateMovieGenres(int movieID, List<Genres> listGenresSelected)
+        public static bool UpdateMovieGenres(int movieID, List<int> listGenresSelected)
         {
             using (var model = new ModelAppMovies())
             {
@@ -177,7 +141,7 @@ namespace BUS
                 {
                     try
                     {
-                        Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == movieID);
+                        var movie = model.Movies.Include("Genres").FirstOrDefault(m => m.MovieID == movieID);
 
                         if (movie != null)
                         {
@@ -185,9 +149,13 @@ namespace BUS
                             movie.Genres.Clear();
 
                             // Thêm các thể loại mới
-                            foreach (var genre in listGenresSelected)
+                            foreach (int genreID in listGenresSelected)
                             {
-                                movie.Genres.Add(genre);
+                                var genre = model.Genres.FirstOrDefault(g => g.GenreID == genreID);
+                                if (genre != null)
+                                {
+                                    movie.Genres.Add(genre);
+                                }
                             }
 
                             model.SaveChanges();
@@ -203,6 +171,44 @@ namespace BUS
             }
             return false;
         }
+        public static bool deleteMovie(int id)
+        {
+            using (var model = new ModelAppMovies())
+            {
+                using (var transaction = model.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var existingMovie = model.Movies.FirstOrDefault(p => p.MovieID == id);
+                        var existingImage = model.Images.FirstOrDefault(p => p.MovieID == id);
+                        if (existingMovie != null && existingImage != null)
+                        {
+                            model.Movies.Remove(existingMovie);
+                            model.Images.Remove(existingImage);
+                            model.SaveChanges();
+                            transaction.Commit();
+                            return true;
+                        }
+                        else if (existingMovie != null && existingImage == null)
+                        {
+                            model.Movies.Remove(existingMovie);
+                            model.SaveChanges();
+                            transaction.Commit();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }
+            }
+        }
 
         public static bool DeleteMovieGenres(int movieID)
         {
@@ -212,12 +218,11 @@ namespace BUS
                 {
                     try
                     {
-                        Movies movie = model.Movies.FirstOrDefault(p => p.MovieID == movieID);
+                        Movies movie = model.Movies.Include("Genres").FirstOrDefault(p => p.MovieID == movieID);
 
                         if (movie != null)
                         {
-                            // Xóa tất cả các thể loại của phim
-                            movie.Genres.Clear();
+                            movie.Genres.Clear(); // Xóa tất cả các thể loại của phim
                             model.SaveChanges();
                             transaction.Commit();
                             return true;

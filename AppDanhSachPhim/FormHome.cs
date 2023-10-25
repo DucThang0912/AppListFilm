@@ -164,9 +164,10 @@ namespace AppDanhSachPhim
 
                 if (MoviesService.KTMovieID(movieID)) //sửa lại phim
                 {
-                    if (MoviesService.UpdateMovie(movieID, movieName, description, duration, releaseDate, endDate, production, director, year, movieType))
+                    if (MoviesService.UpdateMovie(movieID, movieName, description, duration, 
+                        releaseDate, endDate, production, director, year, movieType))
                     {
-                        List<Genres> selectedGenres = checkedListBoxGenres.CheckedItems.Cast<Genres>().ToList();
+                        List<int> selectedGenres = checkedListBoxGenres.CheckedItems.Cast<Genres>().Select(p=> p.GenreID).ToList();
 
                         UpdateMovieGenres(movieID, selectedGenres);
 
@@ -246,11 +247,11 @@ namespace AppDanhSachPhim
                     {
                         if (MoviesService.KTMovieID(id))
                         {
-                            if (MoviesService.deleteMovie(id))
+                            if (MoviesService.deleteMovie(id) && MoviesService.DeleteMovieGenres(id))
                             {
-                                MoviesService.DeleteMovieGenres(id);
                                 LoadData();
                                 MessageBox.Show("Xoá thành công!");
+      
                             }
                             else
                             {
@@ -379,16 +380,13 @@ namespace AppDanhSachPhim
             }
         }
 
-        private void UpdateMovieGenres(int movieID, List<Genres> updatedGenres)
+        private void UpdateMovieGenres(int movieID, List<int> updatedGenres)
         {
             //sửa thể loại phim
-            if (MoviesService.UpdateMovieGenres(movieID, updatedGenres))
-            {
-                MessageBox.Show("Cập nhật thể loại cho phim thành công!");
-            }
-            else
+            if (!MoviesService.UpdateMovieGenres(movieID, updatedGenres))
             {
                 MessageBox.Show("Lỗi khi cập nhật thể loại cho phim!");
+                return;
             }
         }
 
