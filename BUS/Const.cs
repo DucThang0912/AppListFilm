@@ -9,5 +9,6 @@ namespace BUS
     public class Const
     {
         public static bool isExit = true;
+        public static string UserName;
     }
 }

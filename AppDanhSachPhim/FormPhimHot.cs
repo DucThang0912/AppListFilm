@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace AppDanhSachPhim
         public FormPhimHot()
         {
             InitializeComponent();
+        }
+
+        private void FormPhimHot_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
         }
     }
 }

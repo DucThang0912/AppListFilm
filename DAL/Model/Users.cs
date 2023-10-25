@@ -1,7 +1,8 @@
-namespace DAL.Model
+﻿namespace DAL.Model
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -9,6 +10,7 @@ namespace DAL.Model
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+
         public Users()
         {
             Movies = new HashSet<Movies>();
@@ -33,7 +35,13 @@ namespace DAL.Model
 
         public virtual UserRoles UserRoles { get; set; }
 
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Movies> Movies { get; set; }
+
+        [NotMapped] // Đánh dấu không ánh xạ trường này vào cơ sở dữ liệu
+        [DisplayName("Loại tài khoản")]
+        public string roleName { get; set; }
+       
     }
 }

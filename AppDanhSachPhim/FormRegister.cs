@@ -134,12 +134,14 @@ namespace AppDanhSachPhim
                     string username = txtUser.Text;
                     string password = txtPassword.Text;
                     string email = txtEmail.Text;
+                    int role = 3;
 
                     Users user = new Users()
                     {
                         UserName = username,
                         Password = password,
-                        Email = email
+                        Email = email,
+                        Role = role
                     };
 
                     if (UserService.addUsers(user))
