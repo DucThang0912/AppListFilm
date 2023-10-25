@@ -166,9 +166,10 @@ namespace AppDanhSachPhim
                 {
                     if (MoviesService.UpdateMovie(movieID, movieName, description, duration, releaseDate, endDate, production, director, year, movieType))
                     {
-                        SaveOrUpdateMobieGenres(movieID); // cái hàm này ở dưới nó chỉ save chứ ko update đc // sửa chỗ này
-                                                          // còn lại chạy ổn hết // chỉ sủa update lại thể loại
-                                                          //hoặc làm cái hàm sửa thể loại luôn bên moviesService t đang làm
+                        List<Genres> selectedGenres = checkedListBoxGenres.CheckedItems.Cast<Genres>().ToList();
+
+                        UpdateMovieGenres(movieID, selectedGenres);
+
                         if (AddImages())
                         {
                             MessageBox.Show("Cập nhật thành công!");
@@ -203,7 +204,7 @@ namespace AppDanhSachPhim
 
                     if (MoviesService.addMovie(movie))
                     {
-                        SaveOrUpdateMobieGenres(movieID);
+                        SaveMovieGenres(movieID);
                         if (imagePath == null)
                         {
                             LoadData();
@@ -247,7 +248,7 @@ namespace AppDanhSachPhim
                         {
                             if (MoviesService.deleteMovie(id))
                             {
-                                MoviesService.RemoveMovieGenres(id);
+                                MoviesService.DeleteMovieGenres(id);
                                 LoadData();
                                 MessageBox.Show("Xoá thành công!");
                             }
@@ -358,20 +359,34 @@ namespace AppDanhSachPhim
                 checkedListBoxGenres.SetItemChecked(i, isGenreOfMovie);
             }
         }
-        private void SaveOrUpdateMobieGenres(int movieID)
+        private void SaveMovieGenres(int movieID)
         {
             try
             {
                 // Xác định thể loại đã chọn từ checkedListBoxGenres
-                List<Genres> selectedGenres = checkedListBoxGenres.CheckedItems.OfType<Genres>().ToList();
+                List<Genres> selectedGenres = checkedListBoxGenres.CheckedItems.Cast<Genres>().ToList();
 
-                // Lưu hoặc sửa thể loại cho phim
+
+                // Lưu thể loại cho phim
                 foreach (var genre in selectedGenres)
                 {
                     MoviesService.AddGenreToMovie(movieID, genre.GenreID);
                 }
             }
             catch (Exception)
+            {
+                MessageBox.Show("Lỗi khi cập nhật thể loại cho phim!");
+            }
+        }
+
+        private void UpdateMovieGenres(int movieID, List<Genres> updatedGenres)
+        {
+            //sửa thể loại phim
+            if (MoviesService.UpdateMovieGenres(movieID, updatedGenres))
+            {
+                MessageBox.Show("Cập nhật thể loại cho phim thành công!");
+            }
+            else
             {
                 MessageBox.Show("Lỗi khi cập nhật thể loại cho phim!");
             }
@@ -389,6 +404,7 @@ namespace AppDanhSachPhim
                 }
             }
         }
+
         private void GetMovieGenres(int movieID)
         {
             List<Genres> genresList = GenresService.GetGenresByMovieID(movieID);
@@ -400,7 +416,7 @@ namespace AppDanhSachPhim
         {
             if (Const.isExit)
             {
-                Application.Exit();
+                System.Windows.Forms.Application.Exit();
             }
         }
     }

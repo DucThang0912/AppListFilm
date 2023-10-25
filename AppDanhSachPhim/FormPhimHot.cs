@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace AppDanhSachPhim
 {
@@ -24,6 +25,11 @@ namespace AppDanhSachPhim
             {
                 Application.Exit();
             }
+        }
+
+        private void FormPhimHot_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

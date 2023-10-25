@@ -8,13 +8,12 @@ namespace DAL.Model
 
     public partial class Genres
     {
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        
         public Genres()
         {
             Movies = new HashSet<Movies>();
         }
+
         [Key]
         public int GenreID { get; set; }
 

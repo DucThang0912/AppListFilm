@@ -37,7 +37,9 @@
             this.buttonHome = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtShowUserName = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,14 +50,12 @@
             this.quảnLýPhimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelMain.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,6 +102,7 @@
             this.buttonNewFilm.TabIndex = 6;
             this.buttonNewFilm.Text = "Phim mới";
             this.buttonNewFilm.UseVisualStyleBackColor = false;
+            this.buttonNewFilm.Click += new System.EventHandler(this.buttonNewFilm_Click);
             // 
             // buttonSeriesFilm
             // 
@@ -116,6 +117,7 @@
             this.buttonSeriesFilm.TabIndex = 5;
             this.buttonSeriesFilm.Text = "Phim bộ";
             this.buttonSeriesFilm.UseVisualStyleBackColor = false;
+            this.buttonSeriesFilm.Click += new System.EventHandler(this.buttonSeriesFilm_Click);
             // 
             // buttonSingleFilm
             // 
@@ -130,6 +132,7 @@
             this.buttonSingleFilm.TabIndex = 4;
             this.buttonSingleFilm.Text = "Phim lẻ";
             this.buttonSingleFilm.UseVisualStyleBackColor = false;
+            this.buttonSingleFilm.Click += new System.EventHandler(this.buttonSingleFilm_Click);
             // 
             // buttonFilmHot
             // 
@@ -183,13 +186,35 @@
             this.panel2.Size = new System.Drawing.Size(962, 36);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.icons8_user_48;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(803, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 20);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // txtShowUserName
             // 
             this.txtShowUserName.Location = new System.Drawing.Point(837, 11);
             this.txtShowUserName.Name = "txtShowUserName";
+            this.txtShowUserName.ReadOnly = true;
             this.txtShowUserName.Size = new System.Drawing.Size(72, 20);
             this.txtShowUserName.TabIndex = 2;
-            this.txtShowUserName.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
+            this.pictureBox1.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.dangxuat;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(915, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 36);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // panelMain
             // 
@@ -273,28 +298,6 @@
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.icons8_user_48;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(803, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 20);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
-            this.pictureBox1.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.dangxuat;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(915, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 36);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,12 +314,12 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

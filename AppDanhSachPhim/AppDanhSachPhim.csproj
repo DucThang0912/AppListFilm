@@ -74,11 +74,29 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPhimBo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPhimBo.Designer.cs">
+      <DependentUpon>FormPhimBo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPhimHot.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPhimHot.Designer.cs">
       <DependentUpon>FormPhimHot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPhimLe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPhimLe.Designer.cs">
+      <DependentUpon>FormPhimLe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPhimMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPhimMoi.Designer.cs">
+      <DependentUpon>FormPhimMoi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
@@ -100,8 +118,17 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPhimBo.resx">
+      <DependentUpon>FormPhimBo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPhimHot.resx">
       <DependentUpon>FormPhimHot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPhimLe.resx">
+      <DependentUpon>FormPhimLe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPhimMoi.resx">
+      <DependentUpon>FormPhimMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>

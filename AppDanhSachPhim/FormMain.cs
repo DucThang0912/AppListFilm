@@ -102,14 +102,32 @@ namespace AppDanhSachPhim
             logOut(this, new EventArgs());
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void buttonSingleFilm_Click(object sender, EventArgs e)
         {
-            logOut(this, new EventArgs());
+            NewForm(new FormPhimLe());
+            activeForm = null;
         }
 
+        private void buttonSeriesFilm_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormPhimBo());
+            activeForm = null;
+        }
+
+        private void buttonNewFilm_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormPhimMoi());
+            activeForm = null;
+        }
         private void txt_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            logOut(this, new EventArgs());
+        }
     }
+  
 }
