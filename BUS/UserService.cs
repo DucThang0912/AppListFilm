@@ -53,7 +53,7 @@ namespace BUS
                 {
                     context.Users.Add(user);
                     context.SaveChanges();
-                    transaction.Commit();
+                    transaction.Commit(); // lại lỗi saveCharge :)))
                     return true;
                 }
                 catch

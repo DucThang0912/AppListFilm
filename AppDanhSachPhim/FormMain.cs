@@ -128,6 +128,18 @@ namespace AppDanhSachPhim
         {
             logOut(this, new EventArgs());
         }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormTimKiem());
+            activeForm = null;
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            NewForm(new FormTrangChu());
+            activeForm = null;
+        }
     }
   
 }

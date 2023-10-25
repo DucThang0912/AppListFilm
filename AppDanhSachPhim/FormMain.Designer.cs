@@ -70,9 +70,9 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 612);
+            this.panel1.Size = new System.Drawing.Size(200, 753);
             this.panel1.TabIndex = 0;
             // 
             // buttonFind
@@ -81,13 +81,14 @@
             this.buttonFind.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFind.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonFind.Location = new System.Drawing.Point(0, 346);
-            this.buttonFind.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonFind.Location = new System.Drawing.Point(0, 424);
+            this.buttonFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(150, 62);
+            this.buttonFind.Size = new System.Drawing.Size(200, 76);
             this.buttonFind.TabIndex = 7;
             this.buttonFind.Text = "Tìm kiếm";
             this.buttonFind.UseVisualStyleBackColor = false;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 
             // buttonNewFilm
             // 
@@ -95,10 +96,10 @@
             this.buttonNewFilm.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNewFilm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonNewFilm.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonNewFilm.Location = new System.Drawing.Point(0, 284);
-            this.buttonNewFilm.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNewFilm.Location = new System.Drawing.Point(0, 348);
+            this.buttonNewFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNewFilm.Name = "buttonNewFilm";
-            this.buttonNewFilm.Size = new System.Drawing.Size(150, 62);
+            this.buttonNewFilm.Size = new System.Drawing.Size(200, 76);
             this.buttonNewFilm.TabIndex = 6;
             this.buttonNewFilm.Text = "Phim mới";
             this.buttonNewFilm.UseVisualStyleBackColor = false;
@@ -110,10 +111,10 @@
             this.buttonSeriesFilm.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonSeriesFilm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSeriesFilm.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonSeriesFilm.Location = new System.Drawing.Point(0, 222);
-            this.buttonSeriesFilm.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSeriesFilm.Location = new System.Drawing.Point(0, 272);
+            this.buttonSeriesFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSeriesFilm.Name = "buttonSeriesFilm";
-            this.buttonSeriesFilm.Size = new System.Drawing.Size(150, 62);
+            this.buttonSeriesFilm.Size = new System.Drawing.Size(200, 76);
             this.buttonSeriesFilm.TabIndex = 5;
             this.buttonSeriesFilm.Text = "Phim bộ";
             this.buttonSeriesFilm.UseVisualStyleBackColor = false;
@@ -125,10 +126,10 @@
             this.buttonSingleFilm.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonSingleFilm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSingleFilm.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonSingleFilm.Location = new System.Drawing.Point(0, 160);
-            this.buttonSingleFilm.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSingleFilm.Location = new System.Drawing.Point(0, 196);
+            this.buttonSingleFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSingleFilm.Name = "buttonSingleFilm";
-            this.buttonSingleFilm.Size = new System.Drawing.Size(150, 62);
+            this.buttonSingleFilm.Size = new System.Drawing.Size(200, 76);
             this.buttonSingleFilm.TabIndex = 4;
             this.buttonSingleFilm.Text = "Phim lẻ";
             this.buttonSingleFilm.UseVisualStyleBackColor = false;
@@ -140,10 +141,10 @@
             this.buttonFilmHot.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonFilmHot.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFilmHot.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonFilmHot.Location = new System.Drawing.Point(0, 98);
-            this.buttonFilmHot.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonFilmHot.Location = new System.Drawing.Point(0, 120);
+            this.buttonFilmHot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFilmHot.Name = "buttonFilmHot";
-            this.buttonFilmHot.Size = new System.Drawing.Size(150, 62);
+            this.buttonFilmHot.Size = new System.Drawing.Size(200, 76);
             this.buttonFilmHot.TabIndex = 3;
             this.buttonFilmHot.Text = "Phim Hot";
             this.buttonFilmHot.UseVisualStyleBackColor = false;
@@ -155,22 +156,23 @@
             this.buttonHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonHome.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonHome.Location = new System.Drawing.Point(0, 36);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonHome.Location = new System.Drawing.Point(0, 44);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(150, 62);
+            this.buttonHome.Size = new System.Drawing.Size(200, 76);
             this.buttonHome.TabIndex = 2;
             this.buttonHome.Text = "Trang chủ";
             this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 36);
+            this.panel4.Size = new System.Drawing.Size(200, 44);
             this.panel4.TabIndex = 1;
             // 
             // panel2
@@ -180,28 +182,30 @@
             this.panel2.Controls.Add(this.txtShowUserName);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(150, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(962, 36);
+            this.panel2.Size = new System.Drawing.Size(1283, 44);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.icons8_user_48;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(803, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(1071, 14);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 20);
+            this.pictureBox2.Size = new System.Drawing.Size(37, 25);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
             // txtShowUserName
             // 
-            this.txtShowUserName.Location = new System.Drawing.Point(837, 11);
+            this.txtShowUserName.Location = new System.Drawing.Point(1116, 14);
+            this.txtShowUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtShowUserName.Name = "txtShowUserName";
             this.txtShowUserName.ReadOnly = true;
-            this.txtShowUserName.Size = new System.Drawing.Size(72, 20);
+            this.txtShowUserName.Size = new System.Drawing.Size(95, 22);
             this.txtShowUserName.TabIndex = 2;
             // 
             // pictureBox1
@@ -209,9 +213,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
             this.pictureBox1.BackgroundImage = global::AppDanhSachPhim.Properties.Resources.dangxuat;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(915, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(1220, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(63, 44);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
@@ -220,10 +225,10 @@
             // 
             this.panelMain.Controls.Add(this.menuStrip1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(150, 36);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMain.Location = new System.Drawing.Point(200, 44);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(962, 576);
+            this.panelMain.Size = new System.Drawing.Size(1283, 709);
             this.panelMain.TabIndex = 2;
             // 
             // menuStrip1
@@ -237,8 +242,8 @@
             this.trợGiúpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(962, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,25 +254,25 @@
             this.toolStripSeparator1,
             this.đăngXuấtToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
             // quảnLýTàiKhoảnToolStripMenuItem
             // 
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
-            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
             this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(204, 6);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -276,37 +281,37 @@
             this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýPhimToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản lý";
             // 
             // quảnLýPhimToolStripMenuItem
             // 
             this.quảnLýPhimToolStripMenuItem.Name = "quảnLýPhimToolStripMenuItem";
-            this.quảnLýPhimToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.quảnLýPhimToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.quảnLýPhimToolStripMenuItem.Text = "Quản lý phim";
             this.quảnLýPhimToolStripMenuItem.Click += new System.EventHandler(this.quảnLýPhimToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 612);
+            this.ClientSize = new System.Drawing.Size(1483, 753);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
