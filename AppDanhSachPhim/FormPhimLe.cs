@@ -141,13 +141,13 @@ namespace AppDanhSachPhim
 
             Label endDateLabel = new Label();
             endDateLabel.Font = regularFont;
-            endDateLabel.Text = "Ngày kết thúc: " + movie.EndDate;
+            endDateLabel.Text = "Ngày kết thúc: " + movie.EndDate.Value.ToShortDateString();
             endDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(endDateLabel);
 
             Label releaseDateLabel = new Label();
             releaseDateLabel.Font = regularFont;
-            releaseDateLabel.Text = "Ngày công chiếu: " + movie.ReleaseDate;
+            releaseDateLabel.Text = "Ngày công chiếu: " + movie.ReleaseDate.Value.ToShortDateString();
             releaseDateLabel.Dock = DockStyle.Top;
             infoGroupBox.Controls.Add(releaseDateLabel);
 
@@ -167,5 +167,12 @@ namespace AppDanhSachPhim
             return infoGroupBox;
         }
 
+        private void FormPhimLe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

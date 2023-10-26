@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,17 @@ namespace AppDanhSachPhim
             InitializeComponent();
         }
 
-        private async void FormTrangChu_Load(object sender, EventArgs e)
+        private void FormTrangChu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            if (Const.isExit)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void FormTrangChu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

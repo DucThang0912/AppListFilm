@@ -47,6 +47,7 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRegister.Location = new System.Drawing.Point(218, 383);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
@@ -59,6 +60,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
@@ -71,6 +73,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBack.Location = new System.Drawing.Point(361, 383);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
@@ -83,6 +86,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Location = new System.Drawing.Point(218, 210);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
@@ -92,6 +96,7 @@
             // 
             // txtUser
             // 
+            this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUser.Location = new System.Drawing.Point(218, 92);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
@@ -100,6 +105,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
@@ -112,6 +118,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
@@ -124,6 +131,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
@@ -136,6 +144,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.Location = new System.Drawing.Point(218, 152);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
@@ -144,6 +153,7 @@
             // 
             // checkboxHidePass
             // 
+            this.checkboxHidePass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkboxHidePass.AutoSize = true;
             this.checkboxHidePass.ForeColor = System.Drawing.SystemColors.Control;
             this.checkboxHidePass.Location = new System.Drawing.Point(218, 301);
@@ -157,6 +167,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
@@ -169,6 +180,7 @@
             // 
             // txtAgainPass
             // 
+            this.txtAgainPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAgainPass.Location = new System.Drawing.Point(218, 264);
             this.txtAgainPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtAgainPass.Name = "txtAgainPass";
@@ -178,6 +190,7 @@
             // 
             // txtOTP
             // 
+            this.txtOTP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOTP.Location = new System.Drawing.Point(218, 340);
             this.txtOTP.Margin = new System.Windows.Forms.Padding(2);
             this.txtOTP.Name = "txtOTP";
@@ -186,6 +199,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
@@ -198,6 +212,7 @@
             // 
             // btnRegisterConfirm
             // 
+            this.btnRegisterConfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegisterConfirm.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRegisterConfirm.Location = new System.Drawing.Point(218, 383);
             this.btnRegisterConfirm.Margin = new System.Windows.Forms.Padding(2);

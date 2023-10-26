@@ -199,5 +199,17 @@
   <ItemGroup>
     <None Include="Resources\z4817653034190_73527bc35835fe300282332592c96e61.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-gallery-icon-png-image_3989549.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coming soon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comming soon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coming soon1.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

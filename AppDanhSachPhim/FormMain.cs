@@ -27,6 +27,8 @@ namespace AppDanhSachPhim
         private void FormMain_Load(object sender, EventArgs e)
         {
             Decentralization();
+            NewForm(new FormTrangChu());
+            activeForm = null;
 
             txtShowUserName.Text = Const.UserName;
         }
