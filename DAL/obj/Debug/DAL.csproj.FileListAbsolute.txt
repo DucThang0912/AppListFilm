@@ -22,3 +22,15 @@ D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.dll
 D:\Code\Winform C#\AppListFilm\DAL\obj\Debug\DAL.pdb
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.dll.config
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\DAL.pdb
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.xml
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\DAL\obj\Debug\DAL.pdb

@@ -43,3 +43,18 @@ D:\Code\Winform C#\AppListFilm\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\Code\Winform C#\AppListFilm\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\Code\Winform C#\AppListFilm\BUS\obj\Debug\BUS.dll
 D:\Code\Winform C#\AppListFilm\BUS\obj\Debug\BUS.pdb
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\BUS.dll.config
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\BUS.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\BUS.pdb
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\DAL.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.SqlServer.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\DAL.pdb
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\DAL.dll.config
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.xml
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\bin\Debug\EntityFramework.SqlServer.xml
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.dll
+D:\Coding\Learning\Hutech\C#\AppListFilm\BUS\obj\Debug\BUS.pdb
